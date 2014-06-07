@@ -12,4 +12,7 @@ D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\Model.dll
 D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\Model.pdb
 D:\My Projects\WZNTServices\WZNTAPI\Model\obj\Debug\Model.dll
 D:\My Projects\WZNTServices\WZNTAPI\Model\obj\Debug\Model.pdb
-D:\My Projects\WZNTServices\WZNTAPI\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\EntityFramework.dll
+D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\EntityFramework.xml
+D:\My Projects\WZNTServices\WZNTAPI\Model\bin\Debug\EntityFramework.SqlServer.xml

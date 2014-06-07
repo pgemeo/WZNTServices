@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBSAGE.cs" />
+    <Compile Include="DBSource.cs" />
     <Compile Include="DBWZNT.cs" />
     <Compile Include="GruSysDatenquelleConfiguration.cs">
       <DependentUpon>WZNTAPI.tt</DependentUpon>

@@ -41,11 +41,12 @@ namespace WZNTAPI
 
         #region Grundlagen
 
-        public bool SyncGruArtAufEinSprache()
+        public bool SyncArtikel()
         {
             Log.LOG_START();
 
-            bool ret = GrundlagenController.SyncGruArtAufEinSprache();
+            GrundlagenController controller = new GrundlagenController();
+            bool ret = controller.SyncArtikel();
 
             Log.LOG_END();
             
