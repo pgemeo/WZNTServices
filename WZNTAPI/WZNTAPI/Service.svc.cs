@@ -33,7 +33,7 @@ namespace WZNTAPI
             }
             if (composite.BoolValue)
             {
-                composite.StringValue += "Suffix"; // Test
+                composite.StringValue += "Suffix";
             }
             return composite;
         }
