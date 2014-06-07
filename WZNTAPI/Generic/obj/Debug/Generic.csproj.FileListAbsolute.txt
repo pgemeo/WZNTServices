@@ -1,0 +1,13 @@
+D:\My Projects\WZNTAPI\Generic\bin\Debug\Generic.dll
+D:\My Projects\WZNTAPI\Generic\bin\Debug\Generic.pdb
+D:\My Projects\WZNTAPI\Generic\bin\Debug\log4net.dll
+D:\My Projects\WZNTAPI\Generic\bin\Debug\log4net.xml
+D:\My Projects\WZNTAPI\Generic\obj\Debug\Generic.dll
+D:\My Projects\WZNTAPI\Generic\obj\Debug\Generic.pdb
+D:\My Projects\WZNTServices\WZNTAPI\Generic\bin\Debug\Generic.dll
+D:\My Projects\WZNTServices\WZNTAPI\Generic\bin\Debug\Generic.pdb
+D:\My Projects\WZNTServices\WZNTAPI\Generic\bin\Debug\log4net.dll
+D:\My Projects\WZNTServices\WZNTAPI\Generic\bin\Debug\log4net.xml
+D:\My Projects\WZNTServices\WZNTAPI\Generic\obj\Debug\Generic.dll
+D:\My Projects\WZNTServices\WZNTAPI\Generic\obj\Debug\Generic.pdb
+D:\My Projects\WZNTServices\WZNTAPI\Generic\obj\Debug\Generic.csprojResolveAssemblyReference.cache
