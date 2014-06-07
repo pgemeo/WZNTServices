@@ -33,6 +33,7 @@ namespace Data
             }
             catch (Exception ex)
             {
+                data = null;
                 Log.Error(ex.Message);
             }
 

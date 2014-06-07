@@ -28,3 +28,6 @@ D:\My Projects\WZNTServices\WZNTAPI\Business\bin\Debug\log4net.xml
 D:\My Projects\WZNTServices\WZNTAPI\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache
 D:\My Projects\WZNTServices\WZNTAPI\Business\obj\Debug\Business.dll
 D:\My Projects\WZNTServices\WZNTAPI\Business\obj\Debug\Business.pdb
+D:\My Projects\WZNTServices\WZNTAPI\Business\bin\Debug\Business.dll.config
+D:\My Projects\WZNTServices\WZNTAPI\Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\My Projects\WZNTServices\WZNTAPI\Business\bin\Debug\EntityFramework.SqlServer.xml

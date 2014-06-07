@@ -22,7 +22,7 @@ namespace WZNTAPI
         
         #region Grundlagen
         [OperationContract]
-        bool SyncGruArtAufEinSprache();
+        bool SyncArtikel();
         #endregion
     }
 
