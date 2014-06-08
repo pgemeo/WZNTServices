@@ -1,0 +1,21 @@
+2014-06-05 09:52:41,635 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzenList - Started
+2014-06-05 09:52:47,046 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:52:59,584 INFO  WZNTService.Service.CreateGruArtAufEinzelnutzenList - Started
+2014-06-05 09:52:59,585 INFO  WZNTService.Service.CreateGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:52:59,591 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Started
+2014-06-05 09:52:59,591 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:52:59,616 INFO  WZNTService.Service.UpdateGruArtAufEinzelnutzenList - Started
+2014-06-05 09:53:00,174 INFO  WZNTService.Service.UpdateGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:53:01,391 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzenList - Started
+2014-06-05 09:53:01,396 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:55:17,623 INFO  WZNTService.Service.CreateGruArtAufEinzelnutzenList - Started
+2014-06-05 09:55:17,623 INFO  WZNTService.Service.CreateGruArtAufEinzelnutzenList - Ended
+2014-06-05 09:55:17,627 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Started
+2014-06-05 09:55:17,627 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Ended
+2014-06-05 18:02:07,073 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzen - Started
+2014-06-05 18:05:14,098 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzen - Started
+2014-06-05 18:05:23,331 ERROR Business.GrundlagenController.GetGruArtAufEinzelnutzen - Object reference not set to an instance of an object.
+2014-06-05 18:05:24,892 INFO  WZNTService.Service.ReadGruArtAufEinzelnutzen - Ended
+2014-06-05 18:27:33,770 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Started
+2014-06-05 18:28:00,496 ERROR Business.GrundlagenController.DeleteGruArtAufEinzelnutzen - Object reference not set to an instance of an object.
+2014-06-05 18:28:08,370 INFO  WZNTService.Service.DeleteGruArtAufEinzelnutzenList - Ended
