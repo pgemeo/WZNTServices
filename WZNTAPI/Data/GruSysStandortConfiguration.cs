@@ -24,7 +24,7 @@ namespace Data
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.StandBez).HasColumnName("StandBez").IsOptional().HasMaxLength(50);
-            Property(x => x.StandPrefix).HasColumnName("StandPrefix").IsOptional().HasMaxLength(5);
+            Property(x => x.StandPrefix).HasColumnName("StandPrefix").IsRequired().HasMaxLength(5);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
     }

@@ -23,7 +23,7 @@ namespace Data
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(20);
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(5);
             Property(x => x.Frequenz).HasColumnName("Frequenz").IsOptional().HasMaxLength(10);
             Property(x => x.Startdatum).HasColumnName("Startdatum").IsOptional();
             Property(x => x.Startzeit).HasColumnName("Startzeit").IsOptional();

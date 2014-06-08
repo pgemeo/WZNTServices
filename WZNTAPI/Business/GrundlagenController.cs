@@ -22,9 +22,9 @@ namespace Business
 
             Log.Info(String.Format("Reading Artikel data from WZNT..."));
             DataTable dtWZNTArtikel = DBWZNT.ReadArtikel();
-            if (dtWZNTArtikel != null)
+            if (dtWZNTArtikel == null)
             {
-                Log.Info(String.Format("Total Artikels: {0}", dtWZNTArtikel.Rows.Count));
+                //Log.Info(String.Format("Total Artikels: {0}", dtWZNTArtikel.Rows.Count));
 
                 int times = 3;
 
@@ -37,11 +37,13 @@ namespace Business
                     // getting server settings and table information
                     Log.Info(String.Format("Getting server settings and table information..."));
 
+                    var test = _context.GruSysDatenquelles.ToList();
+
                     var tabelles = 
                         (from t in _context.GruSysDqTabelles
                          join dq in _context.GruSysDqtDqs on t.Id equals dq.IdT
                          join quelle in _context.GruSysDatenquelles on dq.IdDq equals quelle.Id
-                         where t.Tabellenname.Equals("Artikel")
+                         where t.Tabellenname.Equals("KHKArtikel")
                          select new 
                             { GruSysDqTabelle_Id = t.Id, GruSysDqTabelle_Tabellenname = t.Tabellenname, GruSysDqTabelle_OTimeStamp = t.OTimeStamp
                                 , GruSysDqtDq_Id = dq.Id
@@ -68,7 +70,10 @@ namespace Business
                             , tabelle.GruSysDatenquelle_UserDesc, tabelle.GruSysDatenquelle_Passwort
                             , tabelle.GruSysDatenquelle_Status, tabelle.GruSysDatenquelle_StandortKz);
 
+
+                        Log.Info(String.Format("Testing connection..."));
                         success = dbSource.TestConnection();
+                        Log.Info(String.Format("Testing connection successfully ? {0}", success));
                     }
                 }
             }

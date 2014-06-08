@@ -26,6 +26,10 @@ namespace Data
             Property(x => x.IdF).HasColumnName("ID_F").IsRequired();
             Property(x => x.IdT).HasColumnName("ID_T").IsRequired();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+
+            // Foreign keys
+            HasRequired(a => a.GruSysDqFeld).WithMany(b => b.GruSysDqfDqts).HasForeignKey(c => c.IdF); // fk_GruSysDqfDqt_GruSysDqFeld
+            HasRequired(a => a.GruSysDqTabelle).WithMany(b => b.GruSysDqfDqts).HasForeignKey(c => c.IdT); // fk_GruSysDqfDqt_GruSysDqTabelle
         }
     }
 

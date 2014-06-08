@@ -27,7 +27,7 @@ namespace Data
             Property(x => x.Servername).HasColumnName("Servername").IsOptional().HasMaxLength(50);
             Property(x => x.UserDesc).HasColumnName("UserDesc").IsOptional().HasMaxLength(50);
             Property(x => x.Passwort).HasColumnName("Passwort").IsOptional().HasMaxLength(128);
-            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(20);
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(5);
             Property(x => x.Status).HasColumnName("Status").IsOptional();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
