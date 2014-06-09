@@ -318,6 +318,27 @@ namespace Business
         #endregion
 
 
+        #region GruSysStandort
+        public List<GruSysStandort> GetGruSysStandortList()
+        {
+            var elements = _context.GruSysStandorts.ToList();
+
+            var collection =
+                (from e in elements
+                 select new GruSysStandort
+                 {
+                     Id = e.Id,
+                     OTimeStamp = e.OTimeStamp,
+                     Standort = e.Standort,
+                     StandortId = e.StandortId
+                 }
+                ).ToList();
+
+            return collection;
+        }
+        #endregion
+
+
         #region Global
         public int Save()
         {

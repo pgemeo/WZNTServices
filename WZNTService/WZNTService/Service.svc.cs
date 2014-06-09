@@ -154,6 +154,7 @@ namespace WZNTService
         #endregion
 
 
+
         #region GruArtAufEinSprache
 
         public List<GruArtAufEinSprache> ReadGruArtAufEinSpracheList(GruArtAufEinzelnutzen model)
@@ -165,6 +166,7 @@ namespace WZNTService
         #endregion
 
 
+
         #region GruSprachen
         
         public List<GruSprachen> ReadGruSprachenList(string locationId = null)
@@ -174,6 +176,18 @@ namespace WZNTService
         }
 
         #endregion
+
+
+
+        #region GruSysStandort
+        public List<GruSysStandort> ReadGruSysStandortList()
+        {
+            GrundlagenController controller = new GrundlagenController();
+            return controller.GetGruSysStandortList();
+        }
+        #endregion
+
+
 
         #endregion
 

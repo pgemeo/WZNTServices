@@ -21,6 +21,7 @@ namespace WZNTService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType Composite);
 
+
         
         #region GruArtAufEinzelnutzen
         
@@ -58,12 +59,22 @@ namespace WZNTService
         #endregion
 
 
+
         #region GruSprachen
 
         [OperationContract]
         List<GruSprachen> ReadGruSprachenList(string locationId);
         
         #endregion
+
+
+
+        #region GruSysStandort
+
+        List<GruSysStandort> ReadGruSysStandortList();
+        
+        #endregion
+
 
         //
         // Image Parser
