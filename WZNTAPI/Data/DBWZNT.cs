@@ -12,6 +12,8 @@ namespace Data
 {
     public class DBWZNT
     {
+        private const string T_WZNTARTIKEL = "[dbo].[WZNTArtikel]";
+
         public static DataTable ReadArtikel()
         {
             DataTable data = new DataTable();
@@ -20,7 +22,7 @@ namespace Data
             try
             {
                 string CS = ConfigurationManager.ConnectionStrings["WZNT"].ConnectionString;
-                string SQL = "SELECT * FROM [dbo].[Artikel]";
+                string SQL = String.Format("SELECT * FROM {0}", T_WZNTARTIKEL);
 
                 oCommand.Connection = new SqlConnection(CS);
                 oCommand.Connection.Open();
