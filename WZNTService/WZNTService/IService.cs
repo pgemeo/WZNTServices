@@ -71,6 +71,7 @@ namespace WZNTService
 
         #region GruSysStandort
 
+        [OperationContract]
         List<GruSysStandort> ReadGruSysStandortList();
         
         #endregion
