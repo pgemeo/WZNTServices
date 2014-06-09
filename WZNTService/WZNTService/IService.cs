@@ -61,7 +61,7 @@ namespace WZNTService
         #region GruSprachen
 
         [OperationContract]
-        List<GruSprachen> ReadGruSprachenList();
+        List<GruSprachen> ReadGruSprachenList(string locationId);
         
         #endregion
 

@@ -280,9 +280,9 @@ namespace Business
 
 
         #region GruSprachen
-        public List<GruSprachen> GetGruSprachenList()
+        public List<GruSprachen> GetGruSprachenList(string locationId)
         {
-            var elements = _context.GruSprachens.ToList();
+            var elements = _context.GruSprachens.Where(m=>m.StandortKz.Equals(locationId)).ToList();
 
             var collection =
                 (from e in elements

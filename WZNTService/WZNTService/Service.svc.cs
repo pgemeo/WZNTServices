@@ -85,7 +85,7 @@ namespace WZNTService
             return model;
         }
 
-        public List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList(string locationId)
+        public List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList(string locationId = null)
         {
             Generic.Log.LOG_START();
             
@@ -167,10 +167,10 @@ namespace WZNTService
 
         #region GruSprachen
         
-        public List<GruSprachen> ReadGruSprachenList()
+        public List<GruSprachen> ReadGruSprachenList(string locationId = null)
         {
             GrundlagenController controller = new GrundlagenController();
-            return controller.GetGruSprachenList();
+            return controller.GetGruSprachenList(locationId);
         }
 
         #endregion
