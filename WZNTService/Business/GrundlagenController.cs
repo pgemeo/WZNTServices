@@ -107,6 +107,7 @@ namespace Business
                 // get database entity for 'GruArtAufEinzelnutzen'
                 Model.GruArtAufEinzelnutzen modelDB = _context.GruArtAufEinzelnutzens.Find(model.Id);
 
+                /*
                 if (modelDB != null)
                 {
                     // delete on cascade
@@ -122,6 +123,7 @@ namespace Business
 
                     _context.GruArtAufEinzelnutzens.Remove(modelDB);
                 }
+                */
             }
             catch (Exception ex)
             {
@@ -139,6 +141,7 @@ namespace Business
                 {
                     modelDB.Aufgabe = model.Aufgabe;
                     modelDB.OTimeStamp = model.OTimeStamp;
+                    modelDB.StandortKz = model.StandortKz;
 
                     // create database entity for 'GruArtAufEinSprache'
                     if (model.GruArtAufEinSpraches != null)
@@ -150,6 +153,7 @@ namespace Business
                             spracheDB.IdSprache = sprache.IdSprache;
                             spracheDB.OTimeStamp = sprache.OTimeStamp;
                             spracheDB.Uebersetzung = sprache.Uebersetzung;
+                            spracheDB.StandortKz = sprache.StandortKz;
 
                             modelDB.GruArtAufEinSpraches.Add(spracheDB);
                         }
@@ -178,6 +182,7 @@ namespace Business
                 // update current fields
                 modelDB.Aufgabe = model.Aufgabe;
                 modelDB.OTimeStamp = model.OTimeStamp;
+                modelDB.StandortKz = model.StandortKz;
 
                 // remove all 'GruArtAufEinSprache'
                 if (model.GruArtAufEinSpraches == null || model.GruArtAufEinSpraches.Count() == 0)
@@ -198,6 +203,7 @@ namespace Business
                             spracheDB.IdSprache = sprache.IdSprache;
                             spracheDB.OTimeStamp = sprache.OTimeStamp;
                             spracheDB.Uebersetzung = sprache.Uebersetzung;
+                            sprache.StandortKz = sprache.StandortKz;
                         }
                     }
                 }
@@ -214,8 +220,8 @@ namespace Business
                          {
                              Id = s1.Id,
                              IdAufgabe = s1.IdAufgabe,
-                             IdSprache = s1.IdSprache
-                             ,
+                             IdSprache = s1.IdSprache,
+                             StandortKz = s1.StandortKz,
                              OTimeStamp = s1.OTimeStamp,
                              Uebersetzung = s1.Uebersetzung
                          }
@@ -233,6 +239,7 @@ namespace Business
                             sDB.IdSprache = s.IdSprache;
                             sDB.OTimeStamp = s.OTimeStamp;
                             sDB.Uebersetzung = s.Uebersetzung;
+                            sDB.StandortKz = s.StandortKz;
 
                             modelDB.GruArtAufEinSpraches.Add(sDB);
                         }
