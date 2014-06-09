@@ -60,7 +60,16 @@ namespace Business
         {
             try
             {
-                var elements = _context.GruArtAufEinzelnutzens.Where(m=>m.StandortKz.Equals(locationId)).ToList();
+                ICollection<Model.GruArtAufEinzelnutzen> elements = null;
+
+                if (!String.IsNullOrEmpty(locationId))
+                {
+                    elements = _context.GruArtAufEinzelnutzens.Where(m => m.StandortKz.Equals(locationId)).ToList();
+                }
+                else
+                {
+                    elements = _context.GruArtAufEinzelnutzens.ToList();
+                }
 
                 var collection =
                     (from e in elements
@@ -282,7 +291,16 @@ namespace Business
         #region GruSprachen
         public List<GruSprachen> GetGruSprachenList(string locationId)
         {
-            var elements = _context.GruSprachens.Where(m=>m.StandortKz.Equals(locationId)).ToList();
+            ICollection<Model.GruSprachen> elements = null;
+
+            if (!String.IsNullOrEmpty(locationId))
+            {
+                elements = _context.GruSprachens.Where(m=>m.StandortKz.Equals(locationId)).ToList();
+            }
+            else
+            {
+                elements = _context.GruSprachens.ToList();
+            }
 
             var collection =
                 (from e in elements
