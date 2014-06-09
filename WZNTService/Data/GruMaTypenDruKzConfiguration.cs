@@ -35,8 +35,10 @@ namespace Data
             Property(x => x.StKz).HasColumnName("StKz").IsOptional();
             Property(x => x.ZsKz).HasColumnName("ZsKz").IsOptional();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
 
             // Foreign keys
+            HasRequired(a => a.GruMaschinen).WithMany(b => b.GruMaTypenDruKzs).HasForeignKey(c => c.IdMaschine); // FK_GruMaTypenDruKz_GruMaschinen
             HasRequired(a => a.GruWerkzWTypen).WithMany(b => b.GruMaTypenDruKzs).HasForeignKey(c => c.IdWzTyp); // fk_GruMaTypenDruKz_GruWerkzWTypen
         }
     }

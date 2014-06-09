@@ -19,6 +19,7 @@ namespace Model
         public string Artikelnummer { get; set; } // Artikelnummer
         public string Matchcode { get; set; } // Matchcode
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruWerkzMatKennl GruWerkzMatKennl { get; set; } // fk_GruWerkzMatKennlArt_GruWerkzMatKennl

@@ -14,16 +14,19 @@ using Model;
 
 namespace Data
 {
-    // GruSysDqTabelle
-    internal class GruSysDqTabelleConfiguration : EntityTypeConfiguration<GruSysDqTabelle>
+    // WZNTArtVarAuspr
+    internal class WzntArtVarAusprConfiguration : EntityTypeConfiguration<WzntArtVarAuspr>
     {
-        public GruSysDqTabelleConfiguration(string schema = "dbo")
+        public WzntArtVarAusprConfiguration(string schema = "dbo")
         {
-            ToTable(schema + ".GruSysDqTabelle");
+            ToTable(schema + ".WZNTArtVarAuspr");
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.Tabellenname).HasColumnName("Tabellenname").IsOptional().HasMaxLength(50);
+            Property(x => x.Auspr1).HasColumnName("Auspr1").IsOptional().HasMaxLength(30);
+            Property(x => x.Auspr2).HasColumnName("Auspr2").IsOptional().HasMaxLength(30);
+            Property(x => x.BezAuspr1).HasColumnName("BezAuspr1").IsOptional().HasMaxLength(50);
+            Property(x => x.BezAuspr2).HasColumnName("BezAuspr2").IsOptional().HasMaxLength(50);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
     }

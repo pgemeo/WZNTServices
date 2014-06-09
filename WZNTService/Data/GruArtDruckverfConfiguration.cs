@@ -27,6 +27,7 @@ namespace Data
             Property(x => x.Kurzzeichen).HasColumnName("Kurzzeichen").IsOptional().HasMaxLength(20);
             Property(x => x.Auflosung).HasColumnName("Auflosung").IsOptional().HasMaxLength(20);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

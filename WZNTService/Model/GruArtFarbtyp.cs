@@ -18,6 +18,7 @@ namespace Model
         public string FarbtypSep { get; set; } // FarbtypSep
         public bool? WzNerz { get; set; } // WZNerz
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
     }
 
 }

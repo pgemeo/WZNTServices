@@ -27,6 +27,7 @@ namespace Data
             Property(x => x.Pos).HasColumnName("Pos").IsRequired();
             Property(x => x.Abstand).HasColumnName("Abstand").IsOptional().HasMaxLength(100);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
 
             // Foreign keys
             HasRequired(a => a.GruWerkzRegMarke).WithMany(b => b.GruWerkzRegMarkePos).HasForeignKey(c => c.IdRegM); // fk_GruWerkzRegMarkePos_GruWerkzRegMarke

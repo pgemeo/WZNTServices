@@ -29,6 +29,7 @@ namespace Data
             Property(x => x.Material).HasColumnName("Material").IsOptional().HasMaxLength(100);
             Property(x => x.MaxLfm).HasColumnName("maxLfm").IsOptional();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

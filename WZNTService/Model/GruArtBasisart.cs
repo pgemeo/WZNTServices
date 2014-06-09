@@ -17,6 +17,7 @@ namespace Model
         public int Id { get; set; } // ID (Primary key)
         public string Basisart { get; set; } // Basisart
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruArtBasisArtSprache> GruArtBasisArtSpraches { get; set; } // GruArtBasisArtSprache.fk_GruArtBasisArtSprache_GruArtBasisart

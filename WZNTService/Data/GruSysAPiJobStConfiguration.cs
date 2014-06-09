@@ -14,20 +14,20 @@ using Model;
 
 namespace Data
 {
-    // GruSysDqJobst
-    internal class GruSysDqJobstConfiguration : EntityTypeConfiguration<GruSysDqJobst>
+    // GruSysAPiJobSt
+    internal class GruSysAPiJobStConfiguration : EntityTypeConfiguration<GruSysAPiJobSt>
     {
-        public GruSysDqJobstConfiguration(string schema = "dbo")
+        public GruSysAPiJobStConfiguration(string schema = "dbo")
         {
-            ToTable(schema + ".GruSysDqJobst");
+            ToTable(schema + ".GruSysAPiJobSt");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(5);
+            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(x => x.JobId).HasColumnName("JOB_ID").IsRequired();
             Property(x => x.Frequenz).HasColumnName("Frequenz").IsOptional().HasMaxLength(10);
             Property(x => x.Startdatum).HasColumnName("Startdatum").IsOptional();
             Property(x => x.Startzeit).HasColumnName("Startzeit").IsOptional();
-            Property(x => x.Status).HasColumnName("Status").IsOptional();
+            Property(x => x.AktivKz).HasColumnName("AktivKz").IsOptional();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
     }

@@ -19,6 +19,7 @@ namespace Model
         public int IdBasisart { get; set; } // ID_Basisart
         public string Uebersetzung { get; set; } // Uebersetzung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruArtBasisart GruArtBasisart { get; set; } // fk_GruArtBasisArtSprache_GruArtBasisart

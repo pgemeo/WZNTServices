@@ -11,17 +11,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
-    // GruSysDqtDq
-    public class GruSysDqtDq
+    // GruProgParameter
+    public class GruProgParameter
     {
         public int Id { get; set; } // ID (Primary key)
-        public int IdDq { get; set; } // ID_Dq
-        public int IdT { get; set; } // ID_T
+        public string StandortKz { get; set; } // StandortKZ
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
-
-        // Foreign keys
-        public virtual GruSysDatenquelle GruSysDatenquelle { get; set; } // fk_GruSysDqtDq_GruSysDatenquelle
-        public virtual GruSysDqTabelle GruSysDqTabelle { get; set; } // fk_GruSysDqtDq_GruSysDqTabelle
     }
 
 }

@@ -19,6 +19,7 @@ namespace Model
         public int Pos { get; set; } // Pos
         public string Abstand { get; set; } // Abstand
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruWerkzRegMarke GruWerkzRegMarke { get; set; } // fk_GruWerkzRegMarkePos_GruWerkzRegMarke

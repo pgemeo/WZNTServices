@@ -26,19 +26,36 @@ namespace Data
         IDbSet<GruArtDruckVorlSprache> GruArtDruckVorlSpraches { get; set; } // GruArtDruckVorlSprache
         IDbSet<GruArtFarbtyp> GruArtFarbtyps { get; set; } // GruArtFarbtyp
         IDbSet<GruArtPunktform> GruArtPunktforms { get; set; } // GruArtPunktform
+        IDbSet<GruBerBenGru> GruBerBenGrus { get; set; } // GruBerBenGru
+        IDbSet<GruBerBenutzer> GruBerBenutzers { get; set; } // GruBerBenutzer
+        IDbSet<GruBerEinstellungen> GruBerEinstellungens { get; set; } // GruBerEinstellungen
+        IDbSet<GruBerEinstellungenGruppe> GruBerEinstellungenGruppes { get; set; } // GruBerEinstellungenGruppe
+        IDbSet<GruBerGruppe> GruBerGruppes { get; set; } // GruBerGruppe
+        IDbSet<GruExportDaCs> GruExportDaCs { get; set; } // GruExportDA_CS
+        IDbSet<GruExportDrkl> GruExportDrkls { get; set; } // GruExportDRKL
+        IDbSet<GruExportEinu> GruExportEinus { get; set; } // GruExportEINU
+        IDbSet<GruExportWz> GruExportWzs { get; set; } // GruExportWZ
         IDbSet<GruMaCfg> GruMaCfgs { get; set; } // GruMaCFG
         IDbSet<GruMaschinen> GruMaschinens { get; set; } // GruMaschinen
         IDbSet<GruMaschMaGruppe> GruMaschMaGruppes { get; set; } // GruMaschMaGruppe
         IDbSet<GruMaTypenDruKz> GruMaTypenDruKzs { get; set; } // GruMaTypenDruKz
+        IDbSet<GruParSprachAu> GruParSprachAus { get; set; } // GruParSprachAus
         IDbSet<GruProgAbrgru> GruProgAbrgrus { get; set; } // GruProgAbrgru
         IDbSet<GruProgAbrgruSprache> GruProgAbrgruSpraches { get; set; } // GruProgAbrgruSprache
+        IDbSet<GruProgParameter> GruProgParameters { get; set; } // GruProgParameter
         IDbSet<GruSprachen> GruSprachens { get; set; } // GruSprachen
+        IDbSet<GruSysAPiJobl> GruSysAPiJobls { get; set; } // GruSysAPiJobl
+        IDbSet<GruSysAPiJobSt> GruSysAPiJobSts { get; set; } // GruSysAPiJobSt
+        IDbSet<GruSysStandort> GruSysStandorts { get; set; } // GruSysStandort
         IDbSet<GruWerkzDruKontrE> GruWerkzDruKontrEs { get; set; } // GruWerkzDruKontrE
         IDbSet<GruWerkzMatKennl> GruWerkzMatKennls { get; set; } // GruWerkzMatKennl
         IDbSet<GruWerkzMatKennlArt> GruWerkzMatKennlArts { get; set; } // GruWerkzMatKennlArt
         IDbSet<GruWerkzRegMarke> GruWerkzRegMarkes { get; set; } // GruWerkzRegMarke
         IDbSet<GruWerkzRegMarkePos> GruWerkzRegMarkePos { get; set; } // GruWerkzRegMarkePos
         IDbSet<GruWerkzWTypen> GruWerkzWTypens { get; set; } // GruWerkzWTypen
+        IDbSet<WzntArtikel> WzntArtikels { get; set; } // WZNTArtikel
+        IDbSet<WzntArtikelVarianten> WzntArtikelVariantens { get; set; } // WZNTArtikelVarianten
+        IDbSet<WzntArtVarAuspr> WzntArtVarAusprs { get; set; } // WZNTArtVarAuspr
 
         int SaveChanges();
     }

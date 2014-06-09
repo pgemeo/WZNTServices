@@ -26,6 +26,7 @@ namespace Data
             Property(x => x.MaGruppe).HasColumnName("MaGruppe").IsOptional().HasMaxLength(20);
             Property(x => x.Beschreibung).HasColumnName("Beschreibung").IsOptional().HasMaxLength(150);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

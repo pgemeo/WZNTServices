@@ -25,6 +25,7 @@ namespace Data
             Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(x => x.Druckvorlagen).HasColumnName("Druckvorlagen").IsOptional().HasMaxLength(100);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

@@ -27,8 +27,10 @@ namespace Model
         public bool? StKz { get; set; } // StKz
         public bool? ZsKz { get; set; } // ZsKz
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
+        public virtual GruMaschinen GruMaschinen { get; set; } // FK_GruMaTypenDruKz_GruMaschinen
         public virtual GruWerkzWTypen GruWerkzWTypen { get; set; } // fk_GruMaTypenDruKz_GruWerkzWTypen
     }
 

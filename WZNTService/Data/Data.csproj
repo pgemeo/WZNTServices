@@ -83,6 +83,33 @@
     <Compile Include="GruArtPunktformConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruBerBenGruConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerBenutzerConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerEinstellungenConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerEinstellungenGruppeConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerGruppeConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportDaCsConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportDrklConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportEinuConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportWzConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruMaCfgConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
@@ -95,13 +122,28 @@
     <Compile Include="GruMaTypenDruKzConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruParSprachAuConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruProgAbrgruConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
     <Compile Include="GruProgAbrgruSpracheConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruProgParameterConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruSprachenConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysAPiJoblConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysAPiJobStConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysStandortConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
     <Compile Include="GruWerkzDruKontrEConfiguration.cs">
@@ -126,6 +168,15 @@
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WzntArtikelConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WzntArtikelVariantenConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WzntArtVarAusprConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="WZNTContext.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>

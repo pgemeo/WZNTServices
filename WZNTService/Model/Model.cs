@@ -5,7 +5,7 @@
 // 
 // The following connection settings were used to generate this file
 // 
-//     Configuration file:     "Data\App.Config"
+//     Configuration file:     "Model\App.config"
 //     Connection String Name: "WZNT"
 //     Connection String:      "Data Source=.\SQLEXPRESS;Initial Catalog=WZNT;Integrated Security=True;"
 

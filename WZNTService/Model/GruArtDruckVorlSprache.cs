@@ -19,6 +19,7 @@ namespace Model
         public int IdDruckvorl { get; set; } // ID_Druckvorl
         public string Uebersetzung { get; set; } // Uebersetzung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruArtDruckvorl GruArtDruckvorl { get; set; } // fk_GruArtDruckVorlSprache_GruArtDruckvorl

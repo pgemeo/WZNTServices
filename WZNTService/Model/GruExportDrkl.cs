@@ -11,12 +11,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
-    // GruSysStandort
-    public class GruSysStandort
+    // GruExportDRKL
+    public class GruExportDrkl
     {
         public int Id { get; set; } // ID (Primary key)
-        public string StandBez { get; set; } // StandBez
-        public string StandPrefix { get; set; } // StandPrefix
+        public string FeldWzntdrkl { get; set; } // FeldWZNTDRKL
+        public string FeldEsko { get; set; } // Feld_ESKO
+        public string Feldtyp { get; set; } // Feldtyp
+        public string StandortKz { get; set; } // StandortKZ
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
     }
 

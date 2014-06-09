@@ -18,6 +18,7 @@ namespace Model
         public string MaGruppe { get; set; } // MaGruppe
         public string Beschreibung { get; set; } // Beschreibung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruMaschinen> GruMaschinens { get; set; } // GruMaschinen.fk_GruMaschinen_GruMaschMaGruppe

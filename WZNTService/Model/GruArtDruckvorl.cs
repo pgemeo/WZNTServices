@@ -17,6 +17,7 @@ namespace Model
         public int Id { get; set; } // ID (Primary key)
         public string Druckvorlagen { get; set; } // Druckvorlagen
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruArtDruckVorlSprache> GruArtDruckVorlSpraches { get; set; } // GruArtDruckVorlSprache.fk_GruArtDruckVorlSprache_GruArtDruckvorl

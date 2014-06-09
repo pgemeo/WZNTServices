@@ -26,6 +26,7 @@ namespace Data
             Property(x => x.Sprache).HasColumnName("Sprache").IsOptional().HasMaxLength(20);
             Property(x => x.Iso).HasColumnName("ISO").IsOptional().HasMaxLength(10);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

@@ -14,18 +14,20 @@ using Model;
 
 namespace Data
 {
-    // GruSysDqFeld
-    internal class GruSysDqFeldConfiguration : EntityTypeConfiguration<GruSysDqFeld>
+    // GruExportWZ
+    internal class GruExportWzConfiguration : EntityTypeConfiguration<GruExportWz>
     {
-        public GruSysDqFeldConfiguration(string schema = "dbo")
+        public GruExportWzConfiguration(string schema = "dbo")
         {
-            ToTable(schema + ".GruSysDqFeld");
+            ToTable(schema + ".GruExportWZ");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.Feld).HasColumnName("Feld").IsOptional().HasMaxLength(50);
+            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(x => x.FeldWzntwz).HasColumnName("FeldWZNTWZ").IsOptional().HasMaxLength(100);
+            Property(x => x.FeldEsko).HasColumnName("Feld_ESKO").IsOptional().HasMaxLength(100);
             Property(x => x.Feldtyp).HasColumnName("Feldtyp").IsOptional().HasMaxLength(50);
-            Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional().HasMaxLength(50);
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
+            Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
     }
 

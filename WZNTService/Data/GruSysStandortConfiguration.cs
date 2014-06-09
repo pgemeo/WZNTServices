@@ -22,9 +22,9 @@ namespace Data
             ToTable(schema + ".GruSysStandort");
             HasKey(x => x.Id);
 
-            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            Property(x => x.StandBez).HasColumnName("StandBez").IsOptional().HasMaxLength(50);
-            Property(x => x.StandPrefix).HasColumnName("StandPrefix").IsRequired().HasMaxLength(5);
+            Property(x => x.Id).HasColumnName("ID").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            Property(x => x.StandortId).HasColumnName("StandortID").IsRequired().HasMaxLength(10);
+            Property(x => x.Standort).HasColumnName("Standort").IsOptional().HasMaxLength(50);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
         }
     }

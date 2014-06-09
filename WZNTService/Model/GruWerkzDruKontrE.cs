@@ -23,6 +23,7 @@ namespace Model
         public string C2Streifen { get; set; } // 2_Streifen
         public string C3Streifen { get; set; } // 3_Streifen
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
     }
 
 }

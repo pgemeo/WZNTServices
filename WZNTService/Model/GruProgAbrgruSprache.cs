@@ -19,6 +19,7 @@ namespace Model
         public int IdAbrGrund { get; set; } // ID_Abr_grund
         public string UebAbrGrund { get; set; } // UebAbr_grund
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruProgAbrgru GruProgAbrgru { get; set; } // fk_GruProgAbrgruSprache_GruProgAbrgru

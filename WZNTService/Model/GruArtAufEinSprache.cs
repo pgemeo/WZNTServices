@@ -19,6 +19,7 @@ namespace Model
         public int IdAufgabe { get; set; } // ID_Aufgabe
         public string Uebersetzung { get; set; } // Uebersetzung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Foreign keys
         public virtual GruArtAufEinzelnutzen GruArtAufEinzelnutzen { get; set; } // fk_GruArtAufEinSprache_GruArtAufEinzelnutzen

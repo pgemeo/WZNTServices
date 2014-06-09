@@ -26,6 +26,7 @@ namespace Data
             Property(x => x.FarbtypSep).HasColumnName("FarbtypSep").IsOptional().HasMaxLength(100);
             Property(x => x.WzNerz).HasColumnName("WZNerz").IsOptional();
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

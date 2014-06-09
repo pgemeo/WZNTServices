@@ -80,6 +80,33 @@
     <Compile Include="GruArtPunktform.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruBerBenGru.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerBenutzer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerEinstellungen.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerEinstellungenGruppe.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruBerGruppe.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportDaCs.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportDrkl.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportEinu.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruExportWz.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruMaCfg.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -92,13 +119,28 @@
     <Compile Include="GruMaTypenDruKz.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruParSprachAu.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruProgAbrgru.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="GruProgAbrgruSprache.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruProgParameter.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruSprachen.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysAPiJobl.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysAPiJobSt.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysStandort.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="GruWerkzDruKontrE.cs">
@@ -125,6 +167,15 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WzntArtikel.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WzntArtikelVarianten.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WzntArtVarAuspr.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

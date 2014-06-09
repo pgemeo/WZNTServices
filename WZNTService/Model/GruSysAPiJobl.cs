@@ -11,21 +11,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
-    // GruSysDqFeld
-    public class GruSysDqFeld
+    // GruSysAPiJobl
+    public class GruSysAPiJobl
     {
         public int Id { get; set; } // ID (Primary key)
-        public string Feld { get; set; } // Feld
-        public string Feldtyp { get; set; } // Feldtyp
-        public string OTimeStamp { get; set; } // O_TimeStamp
-
-        // Reverse navigation
-        public virtual ICollection<GruSysDqfDqt> GruSysDqfDqts { get; set; } // GruSysDqfDqt.fk_GruSysDqfDqt_GruSysDqFeld
-
-        public GruSysDqFeld()
-        {
-            GruSysDqfDqts = new List<GruSysDqfDqt>();
-        }
+        public int JobId { get; set; } // JOB_ID
+        public string JobBez { get; set; } // JOB_Bez
+        public string Parameterdatei { get; set; } // Parameterdatei
+        public bool? AktivKz { get; set; } // AktivKZ
+        public string StandortKz { get; set; } // StandortKz
+        public DateTime? OTimeStamp { get; set; } // O_TimeStamp
     }
 
 }

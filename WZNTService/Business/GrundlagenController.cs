@@ -56,11 +56,11 @@ namespace Business
 
             return null;
         }
-        public List<GruArtAufEinzelnutzen> GetGruArtAufEinzelnutzenList()
+        public List<GruArtAufEinzelnutzen> GetGruArtAufEinzelnutzenList(string locationId)
         {
             try
             {
-                var elements = _context.GruArtAufEinzelnutzens.ToList();
+                var elements = _context.GruArtAufEinzelnutzens.Where(m=>m.StandortKz.Equals(locationId)).ToList();
 
                 var collection =
                     (from e in elements

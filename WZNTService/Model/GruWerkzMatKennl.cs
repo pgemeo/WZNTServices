@@ -18,6 +18,7 @@ namespace Model
         public string MaKennl { get; set; } // MaKennl
         public string Beschreibung { get; set; } // Beschreibung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruWerkzMatKennlArt> GruWerkzMatKennlArts { get; set; } // GruWerkzMatKennlArt.fk_GruWerkzMatKennlArt_GruWerkzMatKennl

@@ -19,13 +19,16 @@ namespace Model
         public string Kurzzeichen { get; set; } // Kurzzeichen
         public string Auflosung { get; set; } // Auflosung
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
-        public virtual ICollection<GruArtDruckVerSprache> GruArtDruckVerSpraches { get; set; } // GruArtDruckVerSprache.fk_GruArtDruckVerSprache_GruArtDruckverf
+        public virtual ICollection<GruArtDruckVerSprache> GruArtDruckVerSpraches { get; set; } // GruArtDruckVerSprache.FK_GruArtDruckVerSprache_GruArtDruckverf
+        public virtual ICollection<GruMaCfg> GruMaCfgs { get; set; } // GruMaCFG.FK_GruMaCFG_GruArtDruckverf
 
         public GruArtDruckverf()
         {
             GruArtDruckVerSpraches = new List<GruArtDruckVerSprache>();
+            GruMaCfgs = new List<GruMaCfg>();
         }
     }
 

@@ -27,6 +27,7 @@ namespace Data
             Property(x => x.IdAufgabe).HasColumnName("ID_Aufgabe").IsRequired();
             Property(x => x.Uebersetzung).HasColumnName("Uebersetzung").IsOptional().HasMaxLength(100);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
 
             // Foreign keys
             HasRequired(a => a.GruSprachen).WithMany(b => b.GruArtAufEinSpraches).HasForeignKey(c => c.IdSprache); // fk_GruArtAufEinSprache_GruSprachen

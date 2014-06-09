@@ -33,7 +33,7 @@ namespace WZNTService
         bool CreateGruArtAufEinzelnutzenList(ICollection<GruArtAufEinzelnutzen> models);
 
         [OperationContract]
-        List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList();
+        List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList(string locationId);
 
         [OperationContract]
         GruArtAufEinzelnutzen ReadGruArtAufEinzelnutzen(int Id);

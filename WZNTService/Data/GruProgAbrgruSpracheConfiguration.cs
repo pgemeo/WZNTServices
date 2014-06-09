@@ -27,6 +27,7 @@ namespace Data
             Property(x => x.IdAbrGrund).HasColumnName("ID_Abr_grund").IsRequired();
             Property(x => x.UebAbrGrund).HasColumnName("UebAbr_grund").IsOptional().HasMaxLength(150);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
 
             // Foreign keys
             HasRequired(a => a.GruSprachen).WithMany(b => b.GruProgAbrgruSpraches).HasForeignKey(c => c.IdSprache); // fk_GruProgAbrgruSprache_GruSprachen

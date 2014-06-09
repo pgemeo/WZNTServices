@@ -26,8 +26,9 @@ namespace Data
             Property(x => x.Maschine).HasColumnName("Maschine").IsOptional().HasMaxLength(30);
             Property(x => x.IdMaGruppe).HasColumnName("ID_MaGruppe").IsRequired();
             Property(x => x.IdRegisterMa).HasColumnName("ID_RegisterMa").IsRequired();
-            Property(x => x.Ort).HasColumnName("Ort").IsOptional().HasMaxLength(50);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
+            Property(x => x.AnzBaugruppe).HasColumnName("AnzBaugruppe").IsOptional().HasMaxLength(10);
 
             // Foreign keys
             HasRequired(a => a.GruMaschMaGruppe).WithMany(b => b.GruMaschinens).HasForeignKey(c => c.IdMaGruppe); // fk_GruMaschinen_GruMaschMaGruppe

@@ -21,6 +21,7 @@ namespace Model
         public string Material { get; set; } // Material
         public decimal? MaxLfm { get; set; } // maxLfm
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruMaTypenDruKz> GruMaTypenDruKzs { get; set; } // GruMaTypenDruKz.fk_GruMaTypenDruKz_GruWerkzWTypen

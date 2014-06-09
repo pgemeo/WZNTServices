@@ -11,15 +11,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model
 {
-    // GruSysDqJobst
-    public class GruSysDqJobst
+    // GruSysStandort
+    public class GruSysStandort
     {
         public int Id { get; set; } // ID (Primary key)
-        public string StandortKz { get; set; } // StandortKZ
-        public string Frequenz { get; set; } // Frequenz
-        public DateTime? Startdatum { get; set; } // Startdatum
-        public DateTime? Startzeit { get; set; } // Startzeit
-        public bool? Status { get; set; } // Status
+        public string StandortId { get; set; } // StandortID
+        public string Standort { get; set; } // Standort
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
     }
 

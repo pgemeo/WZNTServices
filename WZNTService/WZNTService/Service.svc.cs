@@ -85,12 +85,12 @@ namespace WZNTService
             return model;
         }
 
-        public List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList()
+        public List<GruArtAufEinzelnutzen> ReadGruArtAufEinzelnutzenList(string locationId)
         {
             Generic.Log.LOG_START();
             
             GrundlagenController controller = new GrundlagenController();
-            var collection = controller.GetGruArtAufEinzelnutzenList();
+            var collection = controller.GetGruArtAufEinzelnutzenList(locationId);
             
             Generic.Log.LOG_END();
             

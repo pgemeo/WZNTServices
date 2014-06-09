@@ -17,6 +17,7 @@ namespace Model
         public int Id { get; set; } // ID (Primary key)
         public string Aufgabe { get; set; } // Aufgabe
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruArtAufEinSprache> GruArtAufEinSpraches { get; set; } // GruArtAufEinSprache.fk_GruArtAufEinSprache_GruArtAufEinzelnutzen

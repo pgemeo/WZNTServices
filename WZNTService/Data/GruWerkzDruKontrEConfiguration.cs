@@ -31,6 +31,7 @@ namespace Data
             Property(x => x.C2Streifen).HasColumnName("2_Streifen").IsOptional().HasMaxLength(20);
             Property(x => x.C3Streifen).HasColumnName("3_Streifen").IsOptional().HasMaxLength(20);
             Property(x => x.OTimeStamp).HasColumnName("O_TimeStamp").IsOptional();
+            Property(x => x.StandortKz).HasColumnName("StandortKZ").IsOptional().HasMaxLength(10);
         }
     }
 

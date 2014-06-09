@@ -18,11 +18,12 @@ namespace Model
         public string Sprache { get; set; } // Sprache
         public string Iso { get; set; } // ISO
         public DateTime? OTimeStamp { get; set; } // O_TimeStamp
+        public string StandortKz { get; set; } // StandortKZ
 
         // Reverse navigation
         public virtual ICollection<GruArtAufEinSprache> GruArtAufEinSpraches { get; set; } // GruArtAufEinSprache.fk_GruArtAufEinSprache_GruSprachen
         public virtual ICollection<GruArtBasisArtSprache> GruArtBasisArtSpraches { get; set; } // GruArtBasisArtSprache.fk_GruArtBasisArtSprache_GruSprachen
-        public virtual ICollection<GruArtDruckVerSprache> GruArtDruckVerSpraches { get; set; } // GruArtDruckVerSprache.fk_GruArtDruckVerSprache_GruSprachen
+        public virtual ICollection<GruArtDruckVerSprache> GruArtDruckVerSpraches { get; set; } // GruArtDruckVerSprache.FK_GruArtDruckVerSprache_GruSprachen
         public virtual ICollection<GruArtDruckVorlSprache> GruArtDruckVorlSpraches { get; set; } // GruArtDruckVorlSprache.fk_GruArtDruckVorlSprache_GruSprachen
         public virtual ICollection<GruProgAbrgruSprache> GruProgAbrgruSpraches { get; set; } // GruProgAbrgruSprache.fk_GruProgAbrgruSprache_GruSprachen
 
