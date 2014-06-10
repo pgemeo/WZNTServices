@@ -25,6 +25,7 @@ namespace Business
                     Id = model.Id,
                     Aufgabe = model.Aufgabe,
                     OTimeStamp = model.OTimeStamp,
+                    StandortKz = model.StandortKz,
                     GruArtAufEinSpraches =
                         (from se in model.GruArtAufEinSpraches
                          select new GruArtAufEinSprache
@@ -33,6 +34,7 @@ namespace Business
                              IdAufgabe = se.IdAufgabe,
                              IdSprache = se.IdSprache,
                              OTimeStamp = se.OTimeStamp,
+                             StandortKz = se.StandortKz,
                              Uebersetzung = se.Uebersetzung
                          }).ToList()
                     /*(from se in _context.GruArtAufEinSpraches
@@ -78,6 +80,7 @@ namespace Business
                          Id = e.Id,
                          Aufgabe = e.Aufgabe,
                          OTimeStamp = e.OTimeStamp,
+                         StandortKz = e.StandortKz,
                          GruArtAufEinSpraches =
                             (from se in e.GruArtAufEinSpraches
                              select new GruArtAufEinSprache
@@ -86,6 +89,7 @@ namespace Business
                                  IdAufgabe = se.IdAufgabe,
                                  IdSprache = se.IdSprache,
                                  OTimeStamp = se.OTimeStamp,
+                                 StandortKz = se.StandortKz,
                                  Uebersetzung = se.Uebersetzung
                              }).ToList()
                      }
