@@ -110,24 +110,8 @@ namespace Business
             {
                 // get database entity for 'GruArtAufEinzelnutzen'
                 Model.GruArtAufEinzelnutzen modelDB = _context.GruArtAufEinzelnutzens.Find(model.Id);
-
-                /*
-                if (modelDB != null)
-                {
-                    // delete on cascade
-                    if (modelDB.GruArtAufEinSpraches != null)
-                    {
-                        var spraches = modelDB.GruArtAufEinSpraches.ToList();
-
-                        for (int i = spraches.Count() - 1; i >= 0; i--)
-                        {
-                            _context.GruArtAufEinSpraches.Remove(spraches[i]);
-                        }
-                    }
-
-                    _context.GruArtAufEinzelnutzens.Remove(modelDB);
-                }
-                */
+                
+                _context.GruArtAufEinzelnutzens.Remove(modelDB);
             }
             catch (Exception ex)
             {
