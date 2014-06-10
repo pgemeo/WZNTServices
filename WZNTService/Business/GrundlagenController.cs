@@ -62,7 +62,7 @@ namespace Business
         {
             try
             {
-                ICollection<Model.GruArtAufEinzelnutzen> elements = null;
+                ICollection<Model.GruArtAufEinzelnutzen> elements = new List<Model.GruArtAufEinzelnutzen>();
 
                 if (!String.IsNullOrEmpty(locationId))
                 {
@@ -286,7 +286,7 @@ namespace Business
         #region GruSprachen
         public List<GruSprachen> GetGruSprachenList(string locationId)
         {
-            ICollection<Model.GruSprachen> elements = null;
+            ICollection<Model.GruSprachen> elements = new List<Model.GruSprachen>();
 
             if (!String.IsNullOrEmpty(locationId))
             {

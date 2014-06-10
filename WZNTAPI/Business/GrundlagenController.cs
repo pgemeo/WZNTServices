@@ -33,10 +33,17 @@ namespace Business
                 {
                     Log.Info(String.Format("Trying syncronization ({0})...", times));
 
-                    Log.Info(String.Format("Getting server settings and table information..."));
+                    JobInfo job = new JobInfo();
+                    job.AktivKZ = true;
+                    job.ID = 1;
+                    job.JobBez = "Artikel";
+                    job.JobID = 1;
+                    job.ParameterDatei = @"c:\temp\tesxt.xml";
+                    job.StandortKZ = "A01";
 
-                    // getting server settings and table information from database
-                    var tabelles = _context.WZNTArtikel;
+                    JobController jobController = new JobController(job);
+                    jobController.Run();
+
 
                     /*
                     Log.Info(String.Format("Total records: {0}", tabelles.Count));

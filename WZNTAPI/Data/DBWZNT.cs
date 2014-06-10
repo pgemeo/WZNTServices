@@ -44,6 +44,37 @@ namespace Data
 
             return data;
         }
+        public static bool WriteArtikel(DataTable data)
+        {
+            bool ret = false;
+
+            try
+            {
+                string CS = ConfigurationManager.ConnectionStrings["WZNT"].ConnectionString;
+
+                SqlBulkCopy bulkCopy = new SqlBulkCopy(CS);
+
+                bulkCopy.BatchSize = 1000;
+                bulkCopy.BulkCopyTimeout = 3600;
+
+                string tableName = data.TableName;
+
+                bulkCopy.DestinationTableName = tableName;
+
+                //bulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(bulkCopy_SqlRowsCopied);
+
+                //bulkCopy.NotifyAfter = 200;
+
+                bulkCopy.WriteToServer(data);
+                ret = true;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            return ret;
+        }
 
 
         public static DataTable ReadGruArtAufEinzelnutzen()
