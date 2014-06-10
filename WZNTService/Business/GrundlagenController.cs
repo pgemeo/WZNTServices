@@ -331,6 +331,63 @@ namespace Business
 
             return collection;
         }
+        public void DeleteGruSysStandort(GruSysStandort model)
+        {
+            try
+            {
+                // get database entity for 'GruSysStandort'
+                Model.GruSysStandort modelDB = _context.GruSysStandorts.Find(model.Id);
+
+                _context.GruSysStandorts.Remove(modelDB);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void InsertGruSysStandort(GruSysStandort model)
+        {
+            try
+            {
+                // create database entity for 'GruSysStandort'
+                Model.GruSysStandort modelDB = new Model.GruSysStandort();
+
+                if (model != null)
+                {
+                    modelDB.StandortId = model.StandortId;
+                    modelDB.Standort = model.Standort;
+                    modelDB.OTimeStamp = model.OTimeStamp;
+
+                    _context.GruSysStandorts.Add(modelDB);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void UpdateGruSysStandort(GruSysStandort model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return;
+                }
+
+                // get database entity for 'GruSysStandort'
+                Model.GruSysStandort modelDB = _context.GruSysStandorts.Find(model.Id);
+
+                // update current fields
+                modelDB.StandortId = model.StandortId;
+                modelDB.Standort = model.Standort;
+                modelDB.OTimeStamp = model.OTimeStamp;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
         #endregion
 
 

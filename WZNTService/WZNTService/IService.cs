@@ -72,7 +72,19 @@ namespace WZNTService
         #region GruSysStandort
 
         [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool CreateGruSysStandortList(ICollection<GruSysStandort> models);
+
+        [OperationContract]
         List<GruSysStandort> ReadGruSysStandortList();
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool UpdateGruSysStandortList(ICollection<GruSysStandort> models);
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool DeleteGruSysStandortList(ICollection<GruSysStandort> models);
         
         #endregion
 
