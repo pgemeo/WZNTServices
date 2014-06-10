@@ -41,7 +41,7 @@ namespace WZNTAPI
 
         #region Grundlagen
 
-        public bool SyncArtikel()
+        public bool Run()
         {
             Log.LOG_START();
 
