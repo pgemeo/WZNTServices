@@ -180,11 +180,118 @@ namespace WZNTService
 
 
         #region GruSysStandort
+        
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysStandort(GruSysStandort model)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                controller.InsertGruSysStandort(model);
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysStandortList(ICollection<GruSysStandort> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.InsertGruSysStandort(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+        
         public List<GruSysStandort> ReadGruSysStandortList()
         {
             GrundlagenController controller = new GrundlagenController();
             return controller.GetGruSysStandortList();
         }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool UpdateGruSysStandortList(ICollection<GruSysStandort> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.UpdateGruSysStandort(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool DeleteGruSysStandortList(ICollection<GruSysStandort> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.DeleteGruSysStandort(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
         #endregion
 
 
