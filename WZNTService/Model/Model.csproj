@@ -89,9 +89,6 @@
     <Compile Include="GruBerEinstellungen.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="GruBerEinstellungenGruppe.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="GruBerGruppe.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -134,12 +131,6 @@
     <Compile Include="GruSprachen.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="GruSysAPiJobl.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GruSysAPiJobSt.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="GruSysStandort.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -167,15 +158,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WzntArtikel.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WzntArtikelVarianten.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WzntArtVarAuspr.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
