@@ -46,7 +46,7 @@ namespace WZNTAPI
             Log.LOG_START();
 
             GrundlagenController controller = new GrundlagenController();
-            bool ret = controller.SyncArtikel();
+            bool ret = controller.RunJobs();
 
             Log.LOG_END();
             
