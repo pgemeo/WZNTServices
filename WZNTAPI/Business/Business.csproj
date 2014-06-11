@@ -51,7 +51,8 @@
     <Compile Include="ArtikelDataSourceDestination.cs" />
     <Compile Include="ArtikelDataSourceOrigin.cs" />
     <Compile Include="GrundlagenController.cs" />
-    <Compile Include="IDataSource.cs" />
+    <Compile Include="IDataSourceDestination.cs" />
+    <Compile Include="IDataSourceOrigin.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="IJobParametersLoader.cs" />
     <Compile Include="ArtikelJob.cs" />
