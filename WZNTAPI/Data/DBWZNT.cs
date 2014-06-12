@@ -55,9 +55,7 @@ namespace Data
                 bulkCopy.BatchSize = 1000;
                 bulkCopy.BulkCopyTimeout = 3600;
 
-                string tableName = data.TableName;
-
-                bulkCopy.DestinationTableName = tableName;
+                bulkCopy.DestinationTableName = T_WZNTARTIKEL;
 
                 //bulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(bulkCopy_SqlRowsCopied);
 
