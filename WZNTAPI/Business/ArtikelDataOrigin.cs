@@ -40,6 +40,8 @@ namespace Business
             _db = (IDB)Activator.CreateInstance(Type.GetType(String.Format("Data.DB{0}, Data", _dbEngine), true)
                 , new object[] { _dbServer, _dbName, _dbSchema, _dbUser, _dbPassword });
 
+
+            // load API config file for Artikel
             string configFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "App_Data"
                 , System.Configuration.ConfigurationSettings.AppSettings["API_CONFIG_FILE"]);
 
