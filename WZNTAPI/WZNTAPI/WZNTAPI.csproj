@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\APIArtikel.xml" />
-    <Content Include="App_Data\API.xml" />
     <Content Include="App_Data\Gebesee.xml" />
     <Content Include="Service.svc" />
     <Content Include="Web.config" />

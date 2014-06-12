@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<artikel>
-  <sql>select * from [dbo].[WZNTArtikel]</sql>
-  <mappings>
+<API>
+  <artikel>
+    <sql>select * from [dbo].[WZNTArtikel]</sql>
+    <mappings>
       
-  </mappings>
-</artikel>
+    </mappings>
+  </artikel>
+</API>
