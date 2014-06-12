@@ -67,11 +67,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Content Include="App_Data\APIArtikel.xml" />
-=======
     <Content Include="App_Data\API.xml" />
->>>>>>> 18b4faa4c364fef1c26f952ffee6d2b74bc2e8fb
     <Content Include="App_Data\Gebesee.xml" />
     <Content Include="Service.svc" />
     <Content Include="Web.config" />
