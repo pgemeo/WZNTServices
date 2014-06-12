@@ -54,8 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager.cs" />
-    <Compile Include="DBEngineMSSQL.cs" />
+    <Compile Include="DBMSSQL.cs" />
     <Compile Include="DBWZNT.cs" />
+    <Compile Include="IDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WZNT.Designer.cs">
       <AutoGen>True</AutoGen>

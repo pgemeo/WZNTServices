@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.IO;
+using System.Reflection;
 using Generic;
 using Data;
 using Model;
@@ -21,13 +23,13 @@ namespace Business
             bool success = false;
 
             Log.Info(String.Format("Running Jobs for Grundlagen..."));
-            
+
             JobInfo job = new JobInfo();
             job.AktivKZ = true;
             job.ID = 1;
             job.JobBez = "Artikel";
             job.JobID = 1;
-            job.ParameterDatei = @"c:\temp\tesxt.xml";
+            job.ParameterDatei = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "App_Data", "Gebesee.xml");
             job.StandortKZ = "A01";
 
             JobController jobController = new JobController(job);
