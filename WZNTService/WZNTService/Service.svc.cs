@@ -154,6 +154,21 @@ namespace WZNTService
         #endregion
 
 
+        #region GruFarbtyp
+
+        public List<GruArtFarbtyp> ReadGruArtFarbtypList(string locationId = null)
+        {
+            Generic.Log.LOG_START();
+
+            GrundlagenController controller = new GrundlagenController();
+            var collection = controller.ReadGruArtFarbtypList(locationId);
+
+            Generic.Log.LOG_END();
+
+            return collection;
+        }
+
+        #endregion
 
         #region GruArtAufEinSprache
 

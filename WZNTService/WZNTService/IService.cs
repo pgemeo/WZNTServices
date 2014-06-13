@@ -21,8 +21,6 @@ namespace WZNTService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType Composite);
 
-
-        
         #region GruArtAufEinzelnutzen
         
         [OperationContract]
@@ -48,9 +46,14 @@ namespace WZNTService
         bool DeleteGruArtAufEinzelnutzenList(ICollection<GruArtAufEinzelnutzen> models);
 
         #endregion
-        
-        
-        
+
+        #region GruFarbtyp
+
+        [OperationContract]
+        List<GruArtFarbtyp> ReadGruArtFarbtypList(string locationId);
+
+        #endregion
+
         #region GruArtAufEinSprache
 
         [OperationContract]

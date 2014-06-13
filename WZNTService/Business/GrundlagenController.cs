@@ -261,6 +261,46 @@ namespace Business
         }
         #endregion
 
+        #region GruFarbtyp
+
+        public List<GruArtFarbtyp> ReadGruArtFarbtypList(string locationId)
+        {
+            try
+            {
+                ICollection<Model.GruArtFarbtyp> elements = new List<Model.GruArtFarbtyp>();
+
+                if (!String.IsNullOrEmpty(locationId))
+                {
+                    elements = _context.GruArtFarbtyps.Where(m => m.StandortKz.Equals(locationId)).ToList();
+                }
+                else
+                {
+                    elements = _context.GruArtFarbtyps.ToList();
+                }
+
+                var collection =
+                    (from e in elements
+                     select new GruArtFarbtyp
+                     {
+                         Id = e.Id,
+                         FarbtypSep = e.FarbtypSep,
+                         WzNerz = e.WzNerz,
+                         OTimeStamp = e.OTimeStamp,
+                         StandortKz = e.StandortKz
+                     }
+                    ).ToList();
+
+                return collection;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            return new List<GruArtFarbtyp>();
+        }
+
+        #endregion
 
         #region GruArtAufEinSprache
         public List<GruArtAufEinSprache> GetGruArtAufEinSpracheList(GruArtAufEinzelnutzen model)
