@@ -36,7 +36,7 @@ namespace Business
                 {
                     case "Artikel":
                         // creating job for processing Artikel
-                        Job job = new ArtikelJob(jobParameters);
+                        Job job = new ArtikelJob(_jobInfo.StandortKZ, jobParameters);
                         job.Run();
                         break;
 

@@ -58,9 +58,10 @@ namespace Data
                 bulkCopy.DestinationTableName = T_WZNTARTIKEL;
 
                 //bulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(bulkCopy_SqlRowsCopied);
-
                 //bulkCopy.NotifyAfter = 200;
 
+
+                // Mapping columns
                 foreach (DataColumn column in data.Columns)
                 {
                     SqlBulkCopyColumnMapping mapping = new SqlBulkCopyColumnMapping(column.ColumnName, column.ColumnName);

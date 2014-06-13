@@ -12,8 +12,12 @@ namespace Business
 {
     public class ArtikelJob : Job
     {
-        public ArtikelJob(JobParameters jobParameters)
+        private string _standortKZ = null;
+
+        public ArtikelJob(string standortKZ, JobParameters jobParameters)
         {
+            _standortKZ = standortKZ;
+
             // creating data source origin
             _dataSourceOrigin = new ArtikelDataOrigin(jobParameters.DBServer, jobParameters.DBName, jobParameters.DBSchema
                 , jobParameters.DBUser, jobParameters.DBPassword, jobParameters.DBEngine);
@@ -51,6 +55,12 @@ namespace Business
                         {
                             Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
 
+                            // Add standortKZ to the table
+                            DataColumn dc = new DataColumn("StandortKZ");
+                            dc.DataType = Type.GetType("System.String");
+                            dc.DefaultValue = _standortKZ;
+                            dtArtikels.Columns.Add(dc);
+
                             // Writing data into destination
                             Log.Info(String.Format("Writing Artikels into Destination..."));
                             ret = _dataSourceDestination.Write(dtArtikels);
@@ -58,7 +68,7 @@ namespace Business
                         }
                         else
                         {
-                            Log.Warning(String.Format("There is no Artikel."));
+                            Log.Warning(String.Format("There is no Artikels in Origin."));
                         }
 
                         if (ret)

@@ -64,7 +64,7 @@ namespace Business
                 return null;
             }
 
-            string SQL = _xmlDoc.SelectSingleNode("//artikel/sql").InnerText;
+            string SQL = _xmlDoc.SelectSingleNode("//artikel/query").InnerText;
 
             // Mapping columns from origin to destination
             DataTableMapping dtm = new DataTableMapping();
