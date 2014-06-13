@@ -4,7 +4,7 @@
     <database>
       <server>localhost\SQLEXPRESS</server>
       <engine>MSSQL</engine>
-      <name>WZNT</name>
+      <name>X-LABEL</name>
       <schema>dbo</schema>
       <user>nearshoreDC</user>
       <password>nearshoreDC</password>

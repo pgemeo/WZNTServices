@@ -7,7 +7,9 @@ using System.Data;
 using System.Data.Common;
 using System.IO;
 using System.Xml;
+using System.Collections;
 using Data;
+using Generic;
 
 
 namespace Business
@@ -43,7 +45,7 @@ namespace Business
 
             // load API config file for Artikel
             string configFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "App_Data"
-                , System.Configuration.ConfigurationSettings.AppSettings["API_CONFIG_FILE"]);
+                , System.Configuration.ConfigurationSettings.AppSettings["API_CONFIG_FILE_ARTIKEL"]);
 
             if (File.Exists(configFile))
             {
@@ -56,13 +58,33 @@ namespace Business
         {
             DataTable dt = null;
 
+            if (_xmlDoc == null)
+            {
+                Log.Warning(String.Format("There is no configuration file for Artikel."));
+                return null;
+            }
+
             string SQL = _xmlDoc.SelectSingleNode("//artikel/sql").InnerText;
 
             // Mapping columns from origin to destination
             DataTableMapping dtm = new DataTableMapping();
-            dtm.SourceTable = "Table";
-            dtm.DataSetTable = "Artikel";
-            dtm.ColumnMappings.Add("Artikelnummer", "ArtikelNumber");
+
+            var nodes = _xmlDoc.SelectNodes("//artikel/mappings/mapping");
+            if (nodes != null && nodes.Count > 0)
+            {
+                dtm.SourceTable = "Table";
+                dtm.DataSetTable = "WZNTArtikel";
+
+                
+                IEnumerator inodes = nodes.GetEnumerator();  
+                while (inodes.MoveNext()) {   
+                    XmlNode node = (XmlNode) inodes.Current;
+                    
+                    var origin = node.SelectSingleNode("origin").InnerText;
+                    var destination = node.SelectSingleNode("destination").InnerText;
+                    dtm.ColumnMappings.Add(origin, destination);
+                }   
+            }
 
             //String.Format("select * from [dbo].[WZNTArtikel]");
             //string SQL = "select a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv, a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3, b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, FormatME from dbo.KHKArtikel a inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer";

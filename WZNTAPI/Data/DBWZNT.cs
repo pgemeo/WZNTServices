@@ -12,7 +12,7 @@ namespace Data
 {
     public class DBWZNT
     {
-        private static string T_WZNTARTIKEL = "[dbo].[WZNTArtikel]";
+        private static string T_WZNTARTIKEL = "WZNTArtikel";
         private static string CS = ConfigurationManager.ConnectionStrings["WZNT"].ConnectionString;
 
         public static DataTable ReadArtikel()
@@ -61,6 +61,12 @@ namespace Data
 
                 //bulkCopy.NotifyAfter = 200;
 
+                foreach (DataColumn column in data.Columns)
+                {
+                    SqlBulkCopyColumnMapping mapping = new SqlBulkCopyColumnMapping(column.ColumnName, column.ColumnName);
+                    bulkCopy.ColumnMappings.Add(mapping);
+                }
+
                 bulkCopy.WriteToServer(data);
                 ret = true;
             }
@@ -68,6 +74,7 @@ namespace Data
             {
                 Log.Error(ex.Message);
             }
+            
 
             return ret;
         }

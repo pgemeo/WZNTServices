@@ -46,13 +46,20 @@ namespace Business
                         // Reading data from origin
                         Log.Info(String.Format("Reading Artikels from Origin..."));
                         DataTable dtArtikels = _dataSourceOrigin.Read();
-                        Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
 
+                        if (dtArtikels != null)
+                        {
+                            Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
 
-                        // Writing data into destination
-                        Log.Info(String.Format("Writing Artikels into Destination..."));
-                        ret = _dataSourceDestination.Write(dtArtikels);
-                        Log.Info(String.Format("Writing Artikles into Destination Successfully ? {0}", ret));
+                            // Writing data into destination
+                            Log.Info(String.Format("Writing Artikels into Destination..."));
+                            ret = _dataSourceDestination.Write(dtArtikels);
+                            Log.Info(String.Format("Writing Artikles into Destination Successfully ? {0}", ret));
+                        }
+                        else
+                        {
+                            Log.Warning(String.Format("There is no Artikel."));
+                        }
 
                         if (ret)
                         {
