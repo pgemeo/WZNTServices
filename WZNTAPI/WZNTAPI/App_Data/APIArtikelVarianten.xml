@@ -7,7 +7,6 @@
       inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
       inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
     </query>
-    <query>select ArtikelNummer, AuspraegungID, Material, MemoDruck, Dateneingang, Freigabe, Wickelschema from [dbo].[WTXArtikelDruckDatenVarianten]</query>
     <mappings>
       <mapping>
         <origin>ArtikelNummer</origin>

@@ -9,7 +9,6 @@
       inner join KHKVariantenAuspraegungen d on d.AuspraegungID = c.AuspraegungID and d.Mandant = c.Mandant
       inner join KHKVarianten e on e.Variante = a.Variante and e.Mandant = d.Mandant
     </query>
-    <query>select [Auspraegung1], [Sortierung1], [Auspraegung2], [Sortierung2] from [dbo].[KHKVariantenAuspraegungen]</query>
     <mappings>
       <mapping>
         <origin>Auspraegung1</origin>
@@ -26,6 +25,10 @@
       <mapping>
         <origin>BezAuspraegung2</origin>
         <destination>BezAuspr2</destination>
+      </mapping>
+      <mapping>
+        <origin>AuspraegungID</origin>
+        <destination>AuspraegungID</destination>
       </mapping>
     </mappings>
   </ArtVarAuspr>
