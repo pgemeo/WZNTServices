@@ -118,20 +118,12 @@ namespace Data
 
             try
             {
-<<<<<<< HEAD
                 SqlBulkCopy bulkCopy = new SqlBulkCopy(CS, SqlBulkCopyOptions.CheckConstraints);
-=======
-                SqlBulkCopy bulkCopy = new SqlBulkCopy(CS);
->>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
 
                 bulkCopy.BatchSize = 1000;
                 bulkCopy.BulkCopyTimeout = 3600;
 
                 bulkCopy.DestinationTableName = T_WZNTARTIKEL_VARIANTEN;
-<<<<<<< HEAD
-                
-=======
->>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
 
                 //bulkCopy.SqlRowsCopied += new SqlRowsCopiedEventHandler(bulkCopy_SqlRowsCopied);
                 //bulkCopy.NotifyAfter = 200;
@@ -192,11 +184,7 @@ namespace Data
 
             try
             {
-<<<<<<< HEAD
                 SqlBulkCopy bulkCopy = new SqlBulkCopy(CS, SqlBulkCopyOptions.CheckConstraints);
-=======
-                SqlBulkCopy bulkCopy = new SqlBulkCopy(CS);
->>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
 
                 bulkCopy.BatchSize = 1000;
                 bulkCopy.BulkCopyTimeout = 3600;
@@ -225,8 +213,6 @@ namespace Data
 
             return ret;
         }
-<<<<<<< HEAD
-
         public static DataTable ExecuteReader(string sql)
         {
             DataTable data = new DataTable();
@@ -254,7 +240,5 @@ namespace Data
 
             return data;
         }
-=======
->>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
     }
 }

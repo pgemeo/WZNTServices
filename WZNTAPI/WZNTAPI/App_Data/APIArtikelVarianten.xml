@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <API>
   <ArtikelVarianten>
-<<<<<<< HEAD
     <query>
       select distinct c.ArtikelNummer, c.AuspraegungID, c.Material, c.MemoDruck, c.Dateneingang, c.Freigabe, c.Wickelschema
       from dbo.KHKArtikel a
       inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
       inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
     </query>
-=======
     <query>select ArtikelNummer, AuspraegungID, Material, MemoDruck, Dateneingang, Freigabe, Wickelschema from [dbo].[WTXArtikelDruckDatenVarianten]</query>
->>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
     <mappings>
       <mapping>
         <origin>ArtikelNummer</origin>
