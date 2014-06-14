@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<API>
+  <ArtikelVarianten>
+    <query>
+      select distinct c.ArtikelNummer, c.AuspraegungID, c.Material, c.MemoDruck, c.Dateneingang, c.Freigabe, c.Wickelschema
+      from dbo.KHKArtikel a
+      inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
+      inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
+    </query>
+    <mappings>
+      <mapping>
+        <origin>ArtikelNummer</origin>
+        <destination>ID_Artikel</destination>
+      </mapping>
+      <mapping>
+        <origin>AuspraegungID</origin>
+        <destination>AusprID</destination>
+      </mapping>
+      <mapping>
+        <origin>Material</origin>
+        <destination>Material</destination>
+      </mapping>
+      <mapping>
+        <origin>MemoDruck</origin>
+        <destination>MemoDR</destination>
+      </mapping>
+      <mapping>
+        <origin>Dateneingang</origin>
+        <destination>DatenE_KZ</destination>
+      </mapping>
+      <mapping>
+        <origin>Freigabe</origin>
+        <destination>Freigabe_KZ</destination>
+      </mapping>
+      <mapping>
+        <origin>Wickelschema</origin>
+        <destination>Wickelschema</destination>
+      </mapping>
+    </mappings>
+  </ArtikelVarianten>
+</API>

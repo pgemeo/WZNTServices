@@ -33,11 +33,23 @@ namespace Business
                 IJobParametersLoader jobParamsLoader = new JobParametersLoaderXML(_jobInfo.Parameterdatei);
                 JobParameters jobParameters = jobParamsLoader.Load();
 
+                Job job = null;
+
                 switch (_jobInfo.JOB_Bez)
                 {
                     case "Artikel":
-                        // creating job for processing Artikel
-                        Job job = new ArtikelJob(_jobInfo.StandortKz, jobParameters);
+                        // creating job for processing Artikels
+                        //job = new ArtikelJob(_jobInfo.StandortKz, jobParameters);
+                        //job.Run();
+
+
+                        // creating job for processing ArtVarAuspr
+                        //job = new ArtVarAusprJob(_jobInfo.StandortKz, jobParameters);
+                        //job.Run();
+
+
+                        // creating job for processing ArtikelVarianten
+                        job = new ArtikelVariantenJob(_jobInfo.StandortKz, jobParameters);
                         job.Run();
                         break;
 

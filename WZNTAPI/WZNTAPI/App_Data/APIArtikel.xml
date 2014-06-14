@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <API>
-  <artikel>
-    <query>select a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv, a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3, b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, FormatME from dbo.KHKArtikel a inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer</query>
+  <Artikel>
+    <query>
+      select distinct a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv
+      , a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3
+      , b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, b.FormatME
+      from dbo.KHKArtikel a
+      inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
+      inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
+      left join KHKVariantenAuspraegungen d on d.AuspraegungID = c.AuspraegungID and d.Mandant = c.Mandant
+      left join KHKVarianten e on e.Variante = a.Variante and e.Mandant = d.Mandant
+    </query>
     <mappings>
       <mapping>
         <origin>Artikelnummer</origin>
@@ -56,5 +65,5 @@
         <destination>FormatMe</destination>
       </mapping>
     </mappings>
-  </artikel>
+  </Artikel>
 </API>

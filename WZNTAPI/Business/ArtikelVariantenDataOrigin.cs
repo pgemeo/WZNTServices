@@ -14,7 +14,7 @@ using Generic;
 
 namespace Business
 {
-    public class ArtikelDataOrigin : IDataOrigin
+    public class ArtikelVariantenDataOrigin : IDataOrigin
     {
         private string _dbServer;
         private string _dbName;
@@ -29,7 +29,7 @@ namespace Business
 
         IDB _db = null;
 
-        public ArtikelDataOrigin(string dbServer, string dbName, string dbSchema, string dbUser, string dbPassword, string dbEngine)
+        public ArtikelVariantenDataOrigin(string dbServer, string dbName, string dbSchema, string dbUser, string dbPassword, string dbEngine)
         {
             _dbEngine = dbEngine;
             _dbName = dbName;
@@ -45,7 +45,7 @@ namespace Business
 
             // load API config file for Artikel
             string configFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "App_Data"
-                , System.Configuration.ConfigurationSettings.AppSettings["API_CONFIG_FILE_ARTIKEL"]);
+                , System.Configuration.ConfigurationSettings.AppSettings["API_CONFIG_FILE_ARTIKEL_VARIANTEN"]);
 
             if (File.Exists(configFile))
             {
@@ -74,20 +74,20 @@ namespace Business
 
             if (_xmlDoc == null)
             {
-                Log.Warning(String.Format("There is no configuration file for Artikel."));
+                Log.Warning(String.Format("There is no configuration file for Artikel Varianten."));
                 return null;
             }
 
-            string SQL = _xmlDoc.SelectSingleNode("//Artikel/query").InnerText;
+            string SQL = _xmlDoc.SelectSingleNode("//ArtikelVarianten/query").InnerText;
 
             // Mapping columns from origin to destination
             DataTableMapping dtm = new DataTableMapping();
 
-            var nodes = _xmlDoc.SelectNodes("//Artikel/mappings/mapping");
+            var nodes = _xmlDoc.SelectNodes("//ArtikelVarianten/mappings/mapping");
             if (nodes != null && nodes.Count > 0)
             {
                 dtm.SourceTable = "Table";
-                dtm.DataSetTable = "WZNTArtikel";
+                dtm.DataSetTable = "WZNTArtikelVarianten";
 
                 
                 IEnumerator inodes = nodes.GetEnumerator();  
@@ -99,9 +99,6 @@ namespace Business
                     dtm.ColumnMappings.Add(origin, destination);
                 }   
             }
-
-            //String.Format("select * from [dbo].[WZNTArtikel]");
-            //string SQL = "select a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv, a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3, b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, FormatME from dbo.KHKArtikel a inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer";
 
             dt = _db.ReadData(SQL, dtm);
 

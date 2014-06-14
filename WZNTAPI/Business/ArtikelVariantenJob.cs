@@ -10,18 +10,18 @@ using Data;
 
 namespace Business
 {
-    public class ArtikelJob : Job
+    public class ArtikelVariantenJob : Job
     {
-        public ArtikelJob(string standortKZ, JobParameters jobParameters)
+        public ArtikelVariantenJob(string standortKZ, JobParameters jobParameters)
         {
             _standortKZ = standortKZ;
 
             // creating data source origin
-            _dataSourceOrigin = new ArtikelDataOrigin(jobParameters.DBServer, jobParameters.DBName, jobParameters.DBSchema
+            _dataSourceOrigin = new ArtikelVariantenDataOrigin(jobParameters.DBServer, jobParameters.DBName, jobParameters.DBSchema
                 , jobParameters.DBUser, jobParameters.DBPassword, jobParameters.DBEngine);
             
             // creating data source destination
-            _dataSourceDestination = new ArtikelDataDestination();
+            _dataSourceDestination = new ArtikelVariantenDataDestination();
         }
 
         public override bool Run()
@@ -32,12 +32,12 @@ namespace Business
 
             try
             {
-                Log.Info(String.Format("Reading Artikel data from WZNT (snapshot)..."));
-                DataTable dtWZNTArtikel = _dataSourceDestination.Read();
+                Log.Info(String.Format("Reading Artikel Varianten data from WZNT (snapshot)..."));
+                DataTable dtWZNTArtikelVarianten = _dataSourceDestination.Read();
 
-                if (dtWZNTArtikel != null)
+                if (dtWZNTArtikelVarianten != null)
                 {
-                    Log.Info(String.Format("Total Artikels: {0}", dtWZNTArtikel.Rows.Count));
+                    Log.Info(String.Format("Total Artikel Varianten: {0}", dtWZNTArtikelVarianten.Rows.Count));
 
                     int times = 3;
 
@@ -54,27 +54,25 @@ namespace Business
                             Log.Info(String.Format("Trying syncronization ({0})...", times));
 
                             // Reading data from origin
-                            Log.Info(String.Format("Reading Artikels from Origin..."));
-                            DataTable dtArtikels = _dataSourceOrigin.Read();
+                            Log.Info(String.Format("Reading Artikel Varianten from Origin..."));
+                            DataTable dtArtikelVarianten = _dataSourceOrigin.Read();
 
-                            if (dtArtikels != null)
+                            if (dtArtikelVarianten != null)
                             {
-                                Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
+                                Log.Info(String.Format("Total Artikel Varianten: {0}", dtArtikelVarianten.Rows.Count));
 
-                                // Add standortKZ to the table
-                                DataColumn dc = new DataColumn("StandortKZ");
-                                dc.DataType = Type.GetType("System.String");
-                                dc.DefaultValue = _standortKZ;
-                                dtArtikels.Columns.Add(dc);
+                                // Lookup ArtikelID by Artikelnummer and AusprID
+                                dtArtikelVarianten = 
+                                    ((ArtikelVariantenDataDestination)_dataSourceDestination).Lookup(dtArtikelVarianten, _standortKZ);
 
                                 // Writing data into destination
-                                Log.Info(String.Format("Writing Artikels into Destination..."));
-                                ret = _dataSourceDestination.Write(dtArtikels);
-                                Log.Info(String.Format("Writing Artikles into Destination Successfully ? {0}", ret));
+                                Log.Info(String.Format("Writing Artikel Varianten into Destination..."));
+                                ret = _dataSourceDestination.Write(dtArtikelVarianten);
+                                Log.Info(String.Format("Writing Artikle Varianten into Destination Successfully ? {0}", ret));
                             }
                             else
                             {
-                                Log.Warning(String.Format("There is no Artikels in Origin."));
+                                Log.Warning(String.Format("There is no Artikel Varianten in Origin."));
                             }
                         }
                         else
@@ -85,7 +83,7 @@ namespace Business
                 }
                 else
                 {
-                    Log.Error(String.Format("Could not take a Artikel snapshot from WZNT."));
+                    Log.Error(String.Format("Could not take a ArtikelVarianten snapshot from WZNT."));
                 }
             }
             catch (Exception ex)

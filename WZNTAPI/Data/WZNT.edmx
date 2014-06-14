@@ -38,10 +38,102 @@
           <Property Name="Standort" Type="nvarchar" MaxLength="50" />
           <Property Name="O_TimeStamp" Type="datetime2" Precision="7" />
         </EntityType>
+        <EntityType Name="WZNTArtikel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Artikelnummer" Type="nvarchar" MaxLength="20" />
+          <Property Name="StandortKZ" Type="nvarchar" MaxLength="5" />
+          <Property Name="Matchcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Artikelgruppe" Type="nvarchar" MaxLength="20" />
+          <Property Name="HArtikelgruppe" Type="nvarchar" MaxLength="20" />
+          <Property Name="VArtikelgruppe" Type="nvarchar" MaxLength="10" />
+          <Property Name="ArtikelKZ" Type="bit" />
+          <Property Name="UserRek1" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserRek2" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserRek3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Barcodetyp" Type="nvarchar" MaxLength="50" />
+          <Property Name="FormatBreite" Type="money" />
+          <Property Name="FormatVorschub" Type="money" />
+          <Property Name="DurchmKZ" Type="bit" />
+          <Property Name="FormatMe" Type="nvarchar" MaxLength="10" />
+          <Property Name="Basis" Type="varbinary(max)" />
+          <Property Name="DocHoeheBKZ" Type="bit" />
+          <Property Name="DocHoeheVKZ" Type="bit" />
+          <Property Name="ESKOJobID" Type="int" />
+          <Property Name="ID_MaschGru" Type="int" />
+          <Property Name="O_TimeStamp" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="WZNTArtikelVarianten">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Artikel" Type="int" Nullable="false" />
+          <Property Name="AusprID" Type="int" Nullable="false" />
+          <Property Name="Material" Type="nvarchar" MaxLength="50" />
+          <Property Name="MemoDR" Type="nvarchar" MaxLength="350" />
+          <Property Name="DatenE_KZ" Type="bit" />
+          <Property Name="Freigabe_KZ" Type="bit" />
+          <Property Name="Wickelschema" Type="int" />
+          <Property Name="O_TimeStamp" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="WZNTArtVarAuspr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Auspr1" Type="nvarchar" MaxLength="30" />
+          <Property Name="Auspr2" Type="nvarchar" MaxLength="30" />
+          <Property Name="BezAuspr1" Type="nvarchar" MaxLength="50" />
+          <Property Name="BezAuspr2" Type="nvarchar" MaxLength="50" />
+          <Property Name="O_TimeStamp" Type="datetime2" Precision="7" />
+        </EntityType>
+        <Association Name="fk_WZNTArtikelVarianten_WZNTArtikel">
+          <End Role="WZNTArtikel" Type="Self.WZNTArtikel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WZNTArtikelVarianten" Type="Self.WZNTArtikelVarianten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WZNTArtikel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WZNTArtikelVarianten">
+              <PropertyRef Name="ID_Artikel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_WZNTArtikelVarianten_WZNTArtVarAuspr">
+          <End Role="WZNTArtVarAuspr" Type="Self.WZNTArtVarAuspr" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="WZNTArtikelVarianten" Type="Self.WZNTArtikelVarianten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WZNTArtVarAuspr">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WZNTArtikelVarianten">
+              <PropertyRef Name="AusprID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="WZNTModelStoreContainer">
           <EntitySet Name="GruSysAPiJobl" EntityType="Self.GruSysAPiJobl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GruSysAPiJobSt" EntityType="Self.GruSysAPiJobSt" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GruSysStandort" EntityType="Self.GruSysStandort" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WZNTArtikel" EntityType="Self.WZNTArtikel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WZNTArtikelVarianten" EntityType="Self.WZNTArtikelVarianten" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WZNTArtVarAuspr" EntityType="Self.WZNTArtVarAuspr" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_WZNTArtikelVarianten_WZNTArtikel" Association="Self.fk_WZNTArtikelVarianten_WZNTArtikel">
+            <End Role="WZNTArtikel" EntitySet="WZNTArtikel" />
+            <End Role="WZNTArtikelVarianten" EntitySet="WZNTArtikelVarianten" />
+          </AssociationSet>
+          <AssociationSet Name="fk_WZNTArtikelVarianten_WZNTArtVarAuspr" Association="Self.fk_WZNTArtikelVarianten_WZNTArtVarAuspr">
+            <End Role="WZNTArtVarAuspr" EntitySet="WZNTArtVarAuspr" />
+            <End Role="WZNTArtikelVarianten" EntitySet="WZNTArtikelVarianten" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -51,6 +143,17 @@
           <EntitySet Name="GruSysAPiJobl" EntityType="WZNTModel.GruSysAPiJobl" />
           <EntitySet Name="GruSysAPiJobSt" EntityType="WZNTModel.GruSysAPiJobSt" />
           <EntitySet Name="GruSysStandort" EntityType="WZNTModel.GruSysStandort" />
+          <EntitySet Name="WZNTArtikel" EntityType="WZNTModel.WZNTArtikel" />
+          <EntitySet Name="WZNTArtikelVarianten" EntityType="WZNTModel.WZNTArtikelVarianten" />
+          <EntitySet Name="WZNTArtVarAuspr" EntityType="WZNTModel.WZNTArtVarAuspr" />
+          <AssociationSet Name="fk_WZNTArtikelVarianten_WZNTArtikel" Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtikel">
+            <End Role="WZNTArtikel" EntitySet="WZNTArtikel" />
+            <End Role="WZNTArtikelVarianten" EntitySet="WZNTArtikelVarianten" />
+          </AssociationSet>
+          <AssociationSet Name="fk_WZNTArtikelVarianten_WZNTArtVarAuspr" Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtVarAuspr">
+            <End Role="WZNTArtVarAuspr" EntitySet="WZNTArtVarAuspr" />
+            <End Role="WZNTArtikelVarianten" EntitySet="WZNTArtikelVarianten" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="GruSysAPiJobl">
           <Key>
@@ -85,6 +188,91 @@
           <Property Name="Standort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="O_TimeStamp" Type="DateTime" Precision="7" />
         </EntityType>
+        <EntityType Name="WZNTArtikel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Artikelnummer" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="StandortKZ" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Matchcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Artikelgruppe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HArtikelgruppe" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VArtikelgruppe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ArtikelKZ" Type="Boolean" />
+          <Property Name="UserRek1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserRek2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserRek3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Barcodetyp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FormatBreite" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FormatVorschub" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DurchmKZ" Type="Boolean" />
+          <Property Name="FormatMe" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Basis" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DocHoeheBKZ" Type="Boolean" />
+          <Property Name="DocHoeheVKZ" Type="Boolean" />
+          <Property Name="ESKOJobID" Type="Int32" />
+          <Property Name="ID_MaschGru" Type="Int32" />
+          <Property Name="O_TimeStamp" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="WZNTArtikelVarianten" Relationship="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtikel" FromRole="WZNTArtikel" ToRole="WZNTArtikelVarianten" />
+        </EntityType>
+        <EntityType Name="WZNTArtikelVarianten">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Artikel" Type="Int32" Nullable="false" />
+          <Property Name="AusprID" Type="Int32" Nullable="false" />
+          <Property Name="Material" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MemoDR" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="DatenE_KZ" Type="Boolean" />
+          <Property Name="Freigabe_KZ" Type="Boolean" />
+          <Property Name="Wickelschema" Type="Int32" />
+          <Property Name="O_TimeStamp" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="WZNTArtikel" Relationship="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtikel" FromRole="WZNTArtikelVarianten" ToRole="WZNTArtikel" />
+          <NavigationProperty Name="WZNTArtVarAuspr" Relationship="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtVarAuspr" FromRole="WZNTArtikelVarianten" ToRole="WZNTArtVarAuspr" />
+        </EntityType>
+        <EntityType Name="WZNTArtVarAuspr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Auspr1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Auspr2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="BezAuspr1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BezAuspr2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="O_TimeStamp" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="WZNTArtikelVarianten" Relationship="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtVarAuspr" FromRole="WZNTArtVarAuspr" ToRole="WZNTArtikelVarianten" />
+        </EntityType>
+        <Association Name="fk_WZNTArtikelVarianten_WZNTArtikel">
+          <End Type="WZNTModel.WZNTArtikel" Role="WZNTArtikel" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="WZNTModel.WZNTArtikelVarianten" Role="WZNTArtikelVarianten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WZNTArtikel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WZNTArtikelVarianten">
+              <PropertyRef Name="ID_Artikel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_WZNTArtikelVarianten_WZNTArtVarAuspr">
+          <End Type="WZNTModel.WZNTArtVarAuspr" Role="WZNTArtVarAuspr" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="WZNTModel.WZNTArtikelVarianten" Role="WZNTArtikelVarianten" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WZNTArtVarAuspr">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="WZNTArtikelVarianten">
+              <PropertyRef Name="AusprID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -123,6 +311,62 @@
                 <ScalarProperty Name="O_TimeStamp" ColumnName="O_TimeStamp" />
                 <ScalarProperty Name="Standort" ColumnName="Standort" />
                 <ScalarProperty Name="StandortID" ColumnName="StandortID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WZNTArtikel">
+            <EntityTypeMapping TypeName="WZNTModel.WZNTArtikel">
+              <MappingFragment StoreEntitySet="WZNTArtikel">
+                <ScalarProperty Name="O_TimeStamp" ColumnName="O_TimeStamp" />
+                <ScalarProperty Name="ID_MaschGru" ColumnName="ID_MaschGru" />
+                <ScalarProperty Name="ESKOJobID" ColumnName="ESKOJobID" />
+                <ScalarProperty Name="DocHoeheVKZ" ColumnName="DocHoeheVKZ" />
+                <ScalarProperty Name="DocHoeheBKZ" ColumnName="DocHoeheBKZ" />
+                <ScalarProperty Name="Basis" ColumnName="Basis" />
+                <ScalarProperty Name="FormatMe" ColumnName="FormatMe" />
+                <ScalarProperty Name="DurchmKZ" ColumnName="DurchmKZ" />
+                <ScalarProperty Name="FormatVorschub" ColumnName="FormatVorschub" />
+                <ScalarProperty Name="FormatBreite" ColumnName="FormatBreite" />
+                <ScalarProperty Name="Barcodetyp" ColumnName="Barcodetyp" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="UserRek3" ColumnName="UserRek3" />
+                <ScalarProperty Name="UserRek2" ColumnName="UserRek2" />
+                <ScalarProperty Name="UserRek1" ColumnName="UserRek1" />
+                <ScalarProperty Name="ArtikelKZ" ColumnName="ArtikelKZ" />
+                <ScalarProperty Name="VArtikelgruppe" ColumnName="VArtikelgruppe" />
+                <ScalarProperty Name="HArtikelgruppe" ColumnName="HArtikelgruppe" />
+                <ScalarProperty Name="Artikelgruppe" ColumnName="Artikelgruppe" />
+                <ScalarProperty Name="Matchcode" ColumnName="Matchcode" />
+                <ScalarProperty Name="StandortKZ" ColumnName="StandortKZ" />
+                <ScalarProperty Name="Artikelnummer" ColumnName="Artikelnummer" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WZNTArtikelVarianten">
+            <EntityTypeMapping TypeName="WZNTModel.WZNTArtikelVarianten">
+              <MappingFragment StoreEntitySet="WZNTArtikelVarianten">
+                <ScalarProperty Name="O_TimeStamp" ColumnName="O_TimeStamp" />
+                <ScalarProperty Name="Wickelschema" ColumnName="Wickelschema" />
+                <ScalarProperty Name="Freigabe_KZ" ColumnName="Freigabe_KZ" />
+                <ScalarProperty Name="DatenE_KZ" ColumnName="DatenE_KZ" />
+                <ScalarProperty Name="MemoDR" ColumnName="MemoDR" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="AusprID" ColumnName="AusprID" />
+                <ScalarProperty Name="ID_Artikel" ColumnName="ID_Artikel" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WZNTArtVarAuspr">
+            <EntityTypeMapping TypeName="WZNTModel.WZNTArtVarAuspr">
+              <MappingFragment StoreEntitySet="WZNTArtVarAuspr">
+                <ScalarProperty Name="O_TimeStamp" ColumnName="O_TimeStamp" />
+                <ScalarProperty Name="BezAuspr2" ColumnName="BezAuspr2" />
+                <ScalarProperty Name="BezAuspr1" ColumnName="BezAuspr1" />
+                <ScalarProperty Name="Auspr2" ColumnName="Auspr2" />
+                <ScalarProperty Name="Auspr1" ColumnName="Auspr1" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

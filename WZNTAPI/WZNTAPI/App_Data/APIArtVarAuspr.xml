@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<API>
+  <ArtVarAuspr>
+    <query>
+      select distinct e.BezAuspraegung1, e.BezAuspraegung2, d.Auspraegung1, d.Auspraegung2, d.AuspraegungID
+      from dbo.KHKArtikel a
+      inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
+      inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
+      inner join KHKVariantenAuspraegungen d on d.AuspraegungID = c.AuspraegungID and d.Mandant = c.Mandant
+      inner join KHKVarianten e on e.Variante = a.Variante and e.Mandant = d.Mandant
+    </query>
+    <mappings>
+      <mapping>
+        <origin>Auspraegung1</origin>
+        <destination>Auspr1</destination>
+      </mapping>
+      <mapping>
+        <origin>BezAuspraegung1</origin>
+        <destination>BezAuspr1</destination>
+      </mapping>
+      <mapping>
+        <origin>Auspraegung2</origin>
+        <destination>Auspr2</destination>
+      </mapping>
+      <mapping>
+        <origin>BezAuspraegung2</origin>
+        <destination>BezAuspr2</destination>
+      </mapping>
+    </mappings>
+  </ArtVarAuspr>
+</API>

@@ -8,6 +8,11 @@
         <EntityTypeShape EntityType="WZNTModel.GruSysAPiJobl" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="WZNTModel.GruSysAPiJobSt" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="WZNTModel.GruSysStandort" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WZNTModel.WZNTArtikel" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="WZNTModel.WZNTArtikelVarianten" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="WZNTModel.WZNTArtVarAuspr" Width="1.5" PointX="0.75" PointY="5.375" />
+        <AssociationConnector Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtikel" />
+        <AssociationConnector Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtVarAuspr" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
