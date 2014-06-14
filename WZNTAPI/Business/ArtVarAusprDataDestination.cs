@@ -10,9 +10,9 @@ using Generic;
 
 namespace Business
 {
-    public class ArtikelDataDestination : IDataDestination
+    public class ArtVarAusprDataDestination : IDataDestination
     {
-        public ArtikelDataDestination()
+        public ArtVarAusprDataDestination()
         {
 
         }
@@ -21,7 +21,7 @@ namespace Business
         {
             Log.LOG_START();
 
-            DataTable dtWZNTArtikel = DBWZNT.ReadArtikel();
+            DataTable dtWZNTArtikel = DBWZNT.ReadArtVarAuspr();
 
             Log.LOG_END();
 
@@ -33,7 +33,7 @@ namespace Business
 
             bool ret = false;
 
-            ret = DBWZNT.WriteArtikel(data);
+            ret = DBWZNT.WriteArtVarAuspr(data);
 
             Log.LOG_END();
 

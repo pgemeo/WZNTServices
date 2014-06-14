@@ -48,8 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArtVarAusprDataDestination.cs" />
+    <Compile Include="ArtVarAusprDataOrigin.cs" />
+    <Compile Include="ArtVarAusprJob.cs" />
+    <Compile Include="ArtikelVariantenDataOrigin.cs" />
+    <Compile Include="ArtikelVariantenDataDestination.cs" />
     <Compile Include="ArtikelDataDestination.cs" />
     <Compile Include="ArtikelDataOrigin.cs" />
+    <Compile Include="ArtikelVariantenJob.cs" />
     <Compile Include="GrundlagenController.cs" />
     <Compile Include="IDataDestination.cs" />
     <Compile Include="IDataOrigin.cs" />

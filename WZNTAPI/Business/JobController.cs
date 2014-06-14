@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model;
 using Generic;
+using Data;
 
 namespace Business
 {
     public class JobController
     {
-        private JobInfo _jobInfo = null;
+        private GruSysAPiJobl _jobInfo = null;
 
-        public JobController(JobInfo jobInfo)
+        public JobController(GruSysAPiJobl jobInfo)
         {
             _jobInfo = jobInfo;
         }
@@ -20,23 +20,36 @@ namespace Business
 
         public bool Run()
         {
+            Log.LOG_START();
+
             bool ret = false;
 
             try
             {
-                Log.Info(String.Format("Running Job Controller..."));
                 Log.Info(String.Format("JobID={0}, JobBez={1}, StandortKZ={2}, ParameterDatei={3}, AktivKz={4}"
-                    , _jobInfo.ID, _jobInfo.JobBez, _jobInfo.StandortKZ, _jobInfo.ParameterDatei, _jobInfo.AktivKZ));
+                    , _jobInfo.ID, _jobInfo.JOB_Bez, _jobInfo.StandortKz, _jobInfo.Parameterdatei, _jobInfo.AktivKZ));
 
                 // loading job parameters
-                IJobParametersLoader jobParamsLoader = new JobParametersLoaderXML(_jobInfo.ParameterDatei);
+                IJobParametersLoader jobParamsLoader = new JobParametersLoaderXML(_jobInfo.Parameterdatei);
                 JobParameters jobParameters = jobParamsLoader.Load();
 
-                switch (_jobInfo.JobBez)
+                Job job = null;
+
+                switch (_jobInfo.JOB_Bez)
                 {
                     case "Artikel":
-                        // creating job for processing Artikel
-                        Job job = new ArtikelJob(jobParameters);
+                        // creating job for processing Artikels
+                        //job = new ArtikelJob(_jobInfo.StandortKz, jobParameters);
+                        //job.Run();
+
+
+                        // creating job for processing ArtVarAuspr
+                        //job = new ArtVarAusprJob(_jobInfo.StandortKz, jobParameters);
+                        //job.Run();
+
+
+                        // creating job for processing ArtikelVarianten
+                        job = new ArtikelVariantenJob(_jobInfo.StandortKz, jobParameters);
                         job.Run();
                         break;
 
@@ -52,6 +65,8 @@ namespace Business
             {
                 Log.Error(ex.Message);
             }
+
+            Log.LOG_END();
 
             return ret;
         }

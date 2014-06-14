@@ -22,6 +22,8 @@ namespace Business
 
         public JobParameters Load()
         {
+            Log.LOG_START();
+
             JobParameters jobParameters = null;
 
             try
@@ -58,6 +60,8 @@ namespace Business
             {
                 Log.Error(ex.Message);
             }
+
+            Log.LOG_END();
 
             return jobParameters;
         }

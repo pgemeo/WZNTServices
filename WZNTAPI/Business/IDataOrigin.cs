@@ -10,6 +10,7 @@ namespace Business
 {
     public interface IDataOrigin
     {
+        bool CanAccess();
         DataTable Read();
     }
 }
