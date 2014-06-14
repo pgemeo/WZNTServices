@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <API>
   <Artikel>
+<<<<<<< HEAD
     <query>
       select distinct a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv
       , a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3
@@ -11,6 +12,9 @@
       left join KHKVariantenAuspraegungen d on d.AuspraegungID = c.AuspraegungID and d.Mandant = c.Mandant
       left join KHKVarianten e on e.Variante = a.Variante and e.Mandant = d.Mandant
     </query>
+=======
+    <query>select a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv, a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3, b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, FormatME from dbo.KHKArtikel a inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer</query>
+>>>>>>> d1ca2ff20db5e0c1a92c125104823866d95af10e
     <mappings>
       <mapping>
         <origin>Artikelnummer</origin>
