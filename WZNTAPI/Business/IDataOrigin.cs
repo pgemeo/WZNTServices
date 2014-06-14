@@ -10,7 +10,7 @@ namespace Business
 {
     public interface IDataOrigin
     {
-        bool TestConnection();
+        bool CanAccess();
         DataTable Read();
     }
 }

@@ -44,7 +44,7 @@ namespace Business
                     while (times > 0)
                     {
                         Log.Info(String.Format("Testing connection ({0})...", times));
-                        ret = _dataSourceOrigin.TestConnection();
+                        ret = _dataSourceOrigin.CanAccess();
                         Log.Info(String.Format("Testing connection successfully ? {0}.", ret));
 
                         if (ret)
@@ -85,7 +85,7 @@ namespace Business
                 }
                 else
                 {
-                    Log.Error(String.Format("Could not take a snapshot from WZNT Artikel."));
+                    Log.Error(String.Format("Could not take a Artikel snapshot from WZNT."));
                 }
             }
             catch (Exception ex)

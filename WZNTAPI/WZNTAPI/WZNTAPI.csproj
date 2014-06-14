@@ -67,6 +67,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\APIArtVarAuspr.xml" />
+    <Content Include="App_Data\APIArtikelVarianten.xml" />
     <Content Include="App_Data\APIArtikel.xml" />
     <Content Include="App_Data\Gebesee.xml" />
     <Content Include="Service.svc" />
