@@ -168,6 +168,84 @@ namespace WZNTService
             return collection;
         }
 
+        public bool CreateGruArtFarbtypList(ICollection<GruArtFarbtyp> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.InsertGruArtFarbtyp(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        public bool DeleteGruArtFarbtypList(ICollection<GruArtFarbtyp> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.DeleteGruArtFarbtyp(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        public bool UpdateGruArtFarbtypList(ICollection<GruArtFarbtyp> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.UpdateGruArtFarbtyp(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
         #endregion
 
         #region GruArtAufEinSprache

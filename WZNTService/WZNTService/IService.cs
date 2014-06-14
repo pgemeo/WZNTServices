@@ -52,6 +52,15 @@ namespace WZNTService
         [OperationContract]
         List<GruArtFarbtyp> ReadGruArtFarbtypList(string locationId);
 
+        [OperationContract]
+        bool CreateGruArtFarbtypList(ICollection<GruArtFarbtyp> models);
+
+        [OperationContract]
+        bool DeleteGruArtFarbtypList(ICollection<GruArtFarbtyp> models);
+
+        [OperationContract]
+        bool UpdateGruArtFarbtypList(ICollection<GruArtFarbtyp> models);
+
         #endregion
 
         #region GruArtAufEinSprache
@@ -60,17 +69,13 @@ namespace WZNTService
         List<GruArtAufEinSprache> ReadGruArtAufEinSpracheList(GruArtAufEinzelnutzen model);
         
         #endregion
-
-
-
+                
         #region GruSprachen
 
         [OperationContract]
         List<GruSprachen> ReadGruSprachenList(string locationId);
         
         #endregion
-
-
 
         #region GruSysStandort
 
@@ -90,10 +95,7 @@ namespace WZNTService
         bool DeleteGruSysStandortList(ICollection<GruSysStandort> models);
         
         #endregion
-
-
-
-
+        
         //
         // Image Parser
         //

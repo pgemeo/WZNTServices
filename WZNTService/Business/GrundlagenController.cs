@@ -299,6 +299,65 @@ namespace Business
 
             return new List<GruArtFarbtyp>();
         }
+        public void InsertGruArtFarbtyp(GruArtFarbtyp model)
+        {
+            try
+            {
+                // create database entity for 'GruArtFarbtyp'
+                Model.GruArtFarbtyp modelDB = new Model.GruArtFarbtyp();
+
+                if (model != null)
+                {
+                    modelDB.FarbtypSep = model.FarbtypSep;
+                    modelDB.WzNerz = model.WzNerz;
+                    modelDB.StandortKz = model.StandortKz;
+                    modelDB.OTimeStamp = model.OTimeStamp;
+
+                    _context.GruArtFarbtyps.Add(modelDB);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void DeleteGruArtFarbtyp(GruArtFarbtyp model)
+        {
+            try
+            {
+                // get database entity for 'GruArtAufEinzelnutzen'
+                Model.GruArtFarbtyp modelDB = _context.GruArtFarbtyps.Find(model.Id);
+
+                _context.GruArtFarbtyps.Remove(modelDB);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void UpdateGruArtFarbtyp(GruArtFarbtyp model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return;
+                }
+
+                // get database entity for 'GruSysStandort'
+                Model.GruArtFarbtyp modelDB = _context.GruArtFarbtyps.Find(model.Id);
+
+                // update current fields
+                modelDB.FarbtypSep = model.FarbtypSep;
+                modelDB.WzNerz = model.WzNerz;
+                modelDB.StandortKz = model.StandortKz;
+                modelDB.OTimeStamp = model.OTimeStamp;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
 
         #endregion
 
@@ -321,8 +380,7 @@ namespace Business
             return collection;
         }
         #endregion
-
-
+        
         #region GruSprachen
         public List<GruSprachen> GetGruSprachenList(string locationId)
         {
@@ -351,8 +409,7 @@ namespace Business
             return collection;
         }
         #endregion
-
-
+        
         #region GruSysStandort
         public List<GruSysStandort> GetGruSysStandortList()
         {
@@ -429,8 +486,7 @@ namespace Business
             }
         }
         #endregion
-
-
+        
         #region Global
         public int Save()
         {
