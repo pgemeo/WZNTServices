@@ -9,6 +9,7 @@ namespace Business
 {
     public abstract class Job
     {
+        protected string _standortKZ = null; 
         protected IDataOrigin _dataSourceOrigin = null;
         protected IDataDestination _dataSourceDestination = null;
         

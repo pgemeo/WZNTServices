@@ -5,11 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1e58247e12e446209ed369dd2753105a" Name="Diagram1">
-        <EntityTypeShape EntityType="WZNTModel.WZNTArtikel" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="WZNTModel.WZNTArtikelVarianten" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="WZNTModel.WZNTArtVarAuspr" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <AssociationConnector Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtikel" ManuallyRouted="false" />
-        <AssociationConnector Association="WZNTModel.fk_WZNTArtikelVarianten_WZNTArtVarAuspr" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WZNTModel.GruSysAPiJobl" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WZNTModel.GruSysAPiJobSt" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WZNTModel.GruSysStandort" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -56,6 +56,8 @@ namespace Business
 
         public DataTable Read()
         {
+            Log.LOG_START();
+
             DataTable dt = null;
 
             if (_xmlDoc == null)
@@ -90,6 +92,8 @@ namespace Business
             //string SQL = "select a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv, a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3, b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, FormatME from dbo.KHKArtikel a inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer";
 
             dt = _db.ReadData(SQL, dtm);
+
+            Log.LOG_END();
 
             return dt;
         }

@@ -12,8 +12,6 @@ namespace Business
 {
     public class ArtikelJob : Job
     {
-        private string _standortKZ = null;
-
         public ArtikelJob(string standortKZ, JobParameters jobParameters)
         {
             _standortKZ = standortKZ;
@@ -28,6 +26,8 @@ namespace Business
 
         public override bool Run()
         {
+            Log.LOG_START();
+
             bool ret = false;
 
             try
@@ -91,6 +91,8 @@ namespace Business
                 ret = false;
                 Log.Error(ex.Message);
             }
+
+            Log.LOG_END();
 
             return ret;
         }
