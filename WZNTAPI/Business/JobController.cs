@@ -26,7 +26,6 @@ namespace Business
 
             try
             {
-                Log.Info(String.Format("Running Job Controller..."));
                 Log.Info(String.Format("JobID={0}, JobBez={1}, StandortKZ={2}, ParameterDatei={3}, AktivKz={4}"
                     , _jobInfo.ID, _jobInfo.JOB_Bez, _jobInfo.StandortKz, _jobInfo.Parameterdatei, _jobInfo.AktivKZ));
 

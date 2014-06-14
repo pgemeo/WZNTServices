@@ -10,6 +10,7 @@ namespace Data
 {
     public interface IDB
     {
+        bool TestConnection();
         DataTable ReadData(string sql, DataTableMapping dtm);
         DataTable ReadData(string sql);
         void WriteData(DataTable data);

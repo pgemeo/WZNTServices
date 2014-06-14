@@ -54,6 +54,18 @@ namespace Business
             }
         }
 
+
+        public bool TestConnection()
+        {
+            Log.LOG_START();
+
+            bool ret = _db.TestConnection();
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
         public DataTable Read()
         {
             Log.LOG_START();

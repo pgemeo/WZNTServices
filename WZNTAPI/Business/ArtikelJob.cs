@@ -32,8 +32,6 @@ namespace Business
 
             try
             {
-                Log.Info(String.Format("Running ArtikelJob..."));
-
                 Log.Info(String.Format("Reading Artikel data from WZNT (snapshot)..."));
                 DataTable dtWZNTArtikel = _dataSourceDestination.Read();
 
@@ -45,35 +43,39 @@ namespace Business
 
                     while (times > 0)
                     {
-                        Log.Info(String.Format("Trying syncronization ({0})...", times));
-
-                        // Reading data from origin
-                        Log.Info(String.Format("Reading Artikels from Origin..."));
-                        DataTable dtArtikels = _dataSourceOrigin.Read();
-
-                        if (dtArtikels != null)
-                        {
-                            Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
-
-                            // Add standortKZ to the table
-                            DataColumn dc = new DataColumn("StandortKZ");
-                            dc.DataType = Type.GetType("System.String");
-                            dc.DefaultValue = _standortKZ;
-                            dtArtikels.Columns.Add(dc);
-
-                            // Writing data into destination
-                            Log.Info(String.Format("Writing Artikels into Destination..."));
-                            ret = _dataSourceDestination.Write(dtArtikels);
-                            Log.Info(String.Format("Writing Artikles into Destination Successfully ? {0}", ret));
-                        }
-                        else
-                        {
-                            Log.Warning(String.Format("There is no Artikels in Origin."));
-                        }
+                        Log.Info(String.Format("Testing connection ({0})...", times));
+                        ret = _dataSourceOrigin.TestConnection();
+                        Log.Info(String.Format("Testing connection successfully ? {0}.", ret));
 
                         if (ret)
                         {
                             times = 0;
+
+                            Log.Info(String.Format("Trying syncronization ({0})...", times));
+
+                            // Reading data from origin
+                            Log.Info(String.Format("Reading Artikels from Origin..."));
+                            DataTable dtArtikels = _dataSourceOrigin.Read();
+
+                            if (dtArtikels != null)
+                            {
+                                Log.Info(String.Format("Total Artikels: {0}", dtArtikels.Rows.Count));
+
+                                // Add standortKZ to the table
+                                DataColumn dc = new DataColumn("StandortKZ");
+                                dc.DataType = Type.GetType("System.String");
+                                dc.DefaultValue = _standortKZ;
+                                dtArtikels.Columns.Add(dc);
+
+                                // Writing data into destination
+                                Log.Info(String.Format("Writing Artikels into Destination..."));
+                                ret = _dataSourceDestination.Write(dtArtikels);
+                                Log.Info(String.Format("Writing Artikles into Destination Successfully ? {0}", ret));
+                            }
+                            else
+                            {
+                                Log.Warning(String.Format("There is no Artikels in Origin."));
+                            }
                         }
                         else
                         {

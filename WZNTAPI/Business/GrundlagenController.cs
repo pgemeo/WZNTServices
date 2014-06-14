@@ -22,8 +22,6 @@ namespace Business
 
             bool success = false;
 
-            Log.Info(String.Format("Running Jobs for Grundlagen..."));
-
             var jobs = _context.GruSysAPiJobl.Where(m=>m.AktivKZ == true).ToList();
 
             if (jobs.Count == 0)
