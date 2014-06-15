@@ -118,8 +118,12 @@ namespace WZNTService
 
         #endregion
 
+        #region GruSysAPiJobStFrequenz
+        List<GruSysAPiJobStFrequenz> ReadGruSysAPiJobStFrequenzList();
+        #endregion
+
         #region ImageParser
-        
+
         //
         // Image Parser
         //

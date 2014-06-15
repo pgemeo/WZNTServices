@@ -122,6 +122,9 @@ namespace Data
         IDbSet<GruSysAPiJobSt> GruSysAPiJobSts { get; set; } // GruSysAPiJobSt
 
 
+        IDbSet<GruSysAPiJobStFrequenz> GruSysAPiJobStFrequenzs { get; set; } // GruSysAPiJobStFrequenz
+
+
         IDbSet<GruSysStandort> GruSysStandorts { get; set; } // GruSysStandort
 
 

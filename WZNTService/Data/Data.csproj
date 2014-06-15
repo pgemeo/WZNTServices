@@ -140,6 +140,9 @@
     <Compile Include="GruSysAPiJobStConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruSysAPiJobStFrequenzConfiguration.cs">
+      <DependentUpon>WZNTEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruSysStandortConfiguration.cs">
       <DependentUpon>WZNTEF.tt</DependentUpon>
     </Compile>

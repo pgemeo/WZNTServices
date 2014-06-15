@@ -123,6 +123,9 @@ namespace Data
         public IDbSet<GruSysAPiJobSt> GruSysAPiJobSts { get; set; } // GruSysAPiJobSt
 
 
+        public IDbSet<GruSysAPiJobStFrequenz> GruSysAPiJobStFrequenzs { get; set; } // GruSysAPiJobStFrequenz
+
+
         public IDbSet<GruSysStandort> GruSysStandorts { get; set; } // GruSysStandort
 
 
@@ -231,6 +234,8 @@ namespace Data
 
             modelBuilder.Configurations.Add(new GruSysAPiJobStConfiguration());
 
+            modelBuilder.Configurations.Add(new GruSysAPiJobStFrequenzConfiguration());
+
             modelBuilder.Configurations.Add(new GruSysStandortConfiguration());
 
             modelBuilder.Configurations.Add(new GruWerkzDruKontrEConfiguration());
@@ -308,6 +313,8 @@ namespace Data
             modelBuilder.Configurations.Add(new GruSysAPiJoblConfiguration(schema));
 
             modelBuilder.Configurations.Add(new GruSysAPiJobStConfiguration(schema));
+
+            modelBuilder.Configurations.Add(new GruSysAPiJobStFrequenzConfiguration(schema));
 
             modelBuilder.Configurations.Add(new GruSysStandortConfiguration(schema));
 

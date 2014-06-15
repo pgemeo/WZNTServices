@@ -517,6 +517,14 @@ namespace WZNTService
 
         #endregion
 
+        #region GruSysAPiJobStFrequenz
+        public List<GruSysAPiJobStFrequenz> ReadGruSysAPiJobStFrequenzList()
+        {
+            GrundlagenController controller = new GrundlagenController();
+            return controller.GetGruSysAPiJobStFrequenzList();
+        }
+        #endregion
+
         #endregion
 
         #region Image Parser

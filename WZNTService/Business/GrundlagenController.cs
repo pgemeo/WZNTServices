@@ -556,6 +556,24 @@ namespace Business
         }
         #endregion
 
+        #region GruSysAPiJobStFrequenz
+        public List<GruSysAPiJobStFrequenz> GetGruSysAPiJobStFrequenzList()
+        {
+            var elements = _context.GruSysAPiJobStFrequenzs.ToList();
+
+            var collection =
+                (from e in elements
+                 select new GruSysAPiJobStFrequenz
+                 {
+                     OTimeStamp = e.OTimeStamp,
+                     Frequenz = e.Frequenz
+                 }
+                ).ToList();
+
+            return collection;
+        }
+        #endregion
+
         #region Global
         public int Save()
         {
