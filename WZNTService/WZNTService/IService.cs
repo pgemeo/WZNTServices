@@ -119,6 +119,7 @@ namespace WZNTService
         #endregion
 
         #region GruSysAPiJobStFrequenz
+        [OperationContract]
         List<GruSysAPiJobStFrequenz> ReadGruSysAPiJobStFrequenzList();
         #endregion
 
