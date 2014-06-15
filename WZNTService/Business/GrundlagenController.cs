@@ -261,7 +261,6 @@ namespace Business
         }
         #endregion
 
-
         #region GruArtAufEinSprache
         public List<GruArtAufEinSprache> GetGruArtAufEinSpracheList(GruArtAufEinzelnutzen model)
         {
@@ -281,7 +280,6 @@ namespace Business
             return collection;
         }
         #endregion
-
 
         #region GruSprachen
         public List<GruSprachen> GetGruSprachenList(string locationId)
@@ -311,7 +309,6 @@ namespace Business
             return collection;
         }
         #endregion
-
 
         #region GruSysStandort
         public List<GruSysStandort> GetGruSysStandortList()
@@ -390,6 +387,174 @@ namespace Business
         }
         #endregion
 
+        #region GruSysAPiJobl
+        public List<GruSysAPiJobl> GetGruSysAPiJoblList()
+        {
+            var elements = _context.GruSysAPiJobls.ToList();
+
+            var collection =
+                (from e in elements
+                 select new GruSysAPiJobl
+                 {
+                     Id = e.Id,
+                     OTimeStamp = e.OTimeStamp,
+                     AktivKz = e.AktivKz,
+                     JobBez = e.JobBez,
+                     JobId = e.JobId,
+                     Parameterdatei = e.Parameterdatei,
+                     StandortKz = e.StandortKz
+                 }
+                ).ToList();
+
+            return collection;
+        }
+        public void DeleteGruSysAPiJobl(GruSysAPiJobl model)
+        {
+            try
+            {
+                // get database entity for 'GruSysAPiJobl'
+                Model.GruSysAPiJobl modelDB = _context.GruSysAPiJobls.Find(model.Id);
+
+                _context.GruSysAPiJobls.Remove(modelDB);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void InsertGruSysAPiJobl(GruSysAPiJobl model)
+        {
+            try
+            {
+                // create database entity for 'GruSysAPiJobl'
+                Model.GruSysAPiJobl modelDB = new Model.GruSysAPiJobl();
+
+                if (model != null)
+                {
+                    modelDB.JobBez = model.JobBez;
+                    modelDB.JobId = model.JobId;
+                    modelDB.Parameterdatei = model.Parameterdatei;
+                    modelDB.StandortKz = model.StandortKz;
+                    modelDB.OTimeStamp = model.OTimeStamp;
+
+                    _context.GruSysAPiJobls.Add(modelDB);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void UpdateGruSysAPiJobl(GruSysAPiJobl model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return;
+                }
+
+                // get database entity for 'GruSysAPiJobl'
+                Model.GruSysAPiJobl modelDB = _context.GruSysAPiJobls.Find(model.Id);
+
+                // update current fields
+                modelDB.JobBez = model.JobBez;
+                modelDB.JobId = model.JobId;
+                modelDB.Parameterdatei = model.Parameterdatei;
+                modelDB.StandortKz = model.StandortKz;
+                modelDB.OTimeStamp = model.OTimeStamp;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        #endregion
+
+        #region GruSysAPiJobSt
+        public List<GruSysAPiJobSt> GetGruSysAPiJobStList()
+        {
+            var elements = _context.GruSysAPiJobSts.ToList();
+
+            var collection =
+                (from e in elements
+                 select new GruSysAPiJobSt
+                 {
+                     OTimeStamp = e.OTimeStamp,
+                     AktivKz = e.AktivKz,
+                     Frequenz = e.Frequenz,
+                     Startdatum = e.Startdatum,
+                     Startzeit = e.Startzeit,
+                     JobId = e.JobId
+                 }
+                ).ToList();
+
+            return collection;
+        }
+        public void DeleteGruSysAPiJobSt(GruSysAPiJobSt model)
+        {
+            try
+            {
+                // get database entity for 'GruSysAPiJobSt'
+                Model.GruSysAPiJobSt modelDB = _context.GruSysAPiJobSts.Find(model.Id);
+
+                _context.GruSysAPiJobSts.Remove(modelDB);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void InsertGruSysAPiJobSt(GruSysAPiJobSt model)
+        {
+            try
+            {
+                // create database entity for 'GruSysAPiJobSt'
+                Model.GruSysAPiJobSt modelDB = new Model.GruSysAPiJobSt();
+
+                if (model != null)
+                {
+                    modelDB.OTimeStamp = model.OTimeStamp;
+                    modelDB.AktivKz = model.AktivKz;
+                    modelDB.Frequenz = model.Frequenz;
+                    modelDB.Startdatum = model.Startdatum;
+                    modelDB.Startzeit = model.Startzeit;
+                    modelDB.JobId = model.JobId;
+
+                    _context.GruSysAPiJobSts.Add(modelDB);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        public void UpdateGruSysAPiJobSt(GruSysAPiJobSt model)
+        {
+            try
+            {
+                if (model == null)
+                {
+                    return;
+                }
+
+                // get database entity for 'GruSysAPiJobSt'
+                Model.GruSysAPiJobSt modelDB = _context.GruSysAPiJobSts.Find(model.Id);
+
+                // update current fields
+                modelDB.OTimeStamp = model.OTimeStamp;
+                modelDB.AktivKz = model.AktivKz;
+                modelDB.Frequenz = model.Frequenz;
+                modelDB.Startdatum = model.Startdatum;
+                modelDB.Startzeit = model.Startzeit;
+                modelDB.JobId = model.JobId;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+        }
+        #endregion
 
         #region Global
         public int Save()

@@ -21,8 +21,6 @@ namespace WZNTService
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType Composite);
 
-
-        
         #region GruArtAufEinzelnutzen
         
         [OperationContract]
@@ -49,8 +47,6 @@ namespace WZNTService
 
         #endregion
         
-        
-        
         #region GruArtAufEinSprache
 
         [OperationContract]
@@ -58,16 +54,12 @@ namespace WZNTService
         
         #endregion
 
-
-
         #region GruSprachen
 
         [OperationContract]
         List<GruSprachen> ReadGruSprachenList(string locationId);
         
         #endregion
-
-
 
         #region GruSysStandort
 
@@ -88,9 +80,46 @@ namespace WZNTService
         
         #endregion
 
+        #region GruSysAPiJobl
 
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool CreateGruSysAPiJoblList(ICollection<GruSysAPiJobl> models);
 
+        [OperationContract]
+        List<GruSysAPiJobl> ReadGruSysAPiJoblList();
 
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool UpdateGruSysAPiJoblList(ICollection<GruSysAPiJobl> models);
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool DeleteGruSysAPiJoblList(ICollection<GruSysAPiJobl> models);
+
+        #endregion
+
+        #region GruSysAPiJobSt
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool CreateGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models);
+
+        [OperationContract]
+        List<GruSysAPiJobSt> ReadGruSysAPiJobStList();
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool UpdateGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models);
+
+        [OperationContract]
+        //[TransactionFlow(TransactionFlowOption.Mandatory)]
+        bool DeleteGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models);
+
+        #endregion
+
+        #region ImageParser
+        
         //
         // Image Parser
         //
@@ -100,6 +129,9 @@ namespace WZNTService
         
         [OperationContract]
         double ParseSimilarity(string File1, string File2);
+        
+        #endregion
+
     }
 
     [DataContract]

@@ -19,7 +19,6 @@ namespace WZNTService
         // Grundlagen Module
         #region Grundlagen
 
-
         #region GruArtAufEinzelnutzen
 
         //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
@@ -153,8 +152,6 @@ namespace WZNTService
 
         #endregion
 
-
-
         #region GruArtAufEinSprache
 
         public List<GruArtAufEinSprache> ReadGruArtAufEinSpracheList(GruArtAufEinzelnutzen model)
@@ -165,8 +162,6 @@ namespace WZNTService
         
         #endregion
 
-
-
         #region GruSprachen
         
         public List<GruSprachen> ReadGruSprachenList(string locationId = null)
@@ -176,8 +171,6 @@ namespace WZNTService
         }
 
         #endregion
-
-
 
         #region GruSysStandort
         
@@ -294,14 +287,237 @@ namespace WZNTService
 
         #endregion
 
+        #region GruSysAPiJobl
 
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysAPiJobl(GruSysAPiJobl model)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                controller.InsertGruSysAPiJobl(model);
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysAPiJoblList(ICollection<GruSysAPiJobl> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.InsertGruSysAPiJobl(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        public List<GruSysAPiJobl> ReadGruSysAPiJoblList()
+        {
+            GrundlagenController controller = new GrundlagenController();
+            return controller.GetGruSysAPiJoblList();
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool UpdateGruSysAPiJoblList(ICollection<GruSysAPiJobl> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.UpdateGruSysAPiJobl(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool DeleteGruSysAPiJoblList(ICollection<GruSysAPiJobl> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.DeleteGruSysAPiJobl(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
 
         #endregion
 
+        #region GruSysAPiJobSt
 
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysAPiJobSt(GruSysAPiJobSt model)
+        {
+            Log.LOG_START();
 
+            bool ret = false;
 
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                controller.InsertGruSysAPiJobSt(model);
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
 
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool CreateGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.InsertGruSysAPiJobSt(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        public List<GruSysAPiJobSt> ReadGruSysAPiJobStList()
+        {
+            GrundlagenController controller = new GrundlagenController();
+            return controller.GetGruSysAPiJobStList();
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool UpdateGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.UpdateGruSysAPiJobSt(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        //[OperationBehavior(TransactionAutoComplete = true, TransactionScopeRequired = true)]
+        public bool DeleteGruSysAPiJobStList(ICollection<GruSysAPiJobSt> models)
+        {
+            Log.LOG_START();
+
+            bool ret = false;
+
+            try
+            {
+                GrundlagenController controller = new GrundlagenController();
+                foreach (var model in models)
+                {
+                    controller.DeleteGruSysAPiJobSt(model);
+                }
+                int rows = controller.Save();
+                ret = rows > 0;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.Message);
+            }
+
+            Log.LOG_END();
+
+            return ret;
+        }
+
+        #endregion
+
+        #endregion
 
         #region Image Parser
         public double ParsePixels(string File1, string File2)
@@ -313,8 +529,6 @@ namespace WZNTService
             return ImageParser.ParseSimilarity(File1, File2);
         }
         #endregion
-
-
 
         #region Test
         public string GetData(int Value)

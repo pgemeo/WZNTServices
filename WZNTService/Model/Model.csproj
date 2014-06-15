@@ -131,6 +131,12 @@
     <Compile Include="GruSprachen.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="GruSysAPiJobl.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruSysAPiJobSt.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="GruSysStandort.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

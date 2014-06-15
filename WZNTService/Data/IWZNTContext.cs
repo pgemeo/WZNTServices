@@ -116,6 +116,12 @@ namespace Data
         IDbSet<GruSprachen> GruSprachens { get; set; } // GruSprachen
 
 
+        IDbSet<GruSysAPiJobl> GruSysAPiJobls { get; set; } // GruSysAPiJobl
+
+
+        IDbSet<GruSysAPiJobSt> GruSysAPiJobSts { get; set; } // GruSysAPiJobSt
+
+
         IDbSet<GruSysStandort> GruSysStandorts { get; set; } // GruSysStandort
 
 

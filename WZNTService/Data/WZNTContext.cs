@@ -117,6 +117,12 @@ namespace Data
         public IDbSet<GruSprachen> GruSprachens { get; set; } // GruSprachen
 
 
+        public IDbSet<GruSysAPiJobl> GruSysAPiJobls { get; set; } // GruSysAPiJobl
+
+
+        public IDbSet<GruSysAPiJobSt> GruSysAPiJobSts { get; set; } // GruSysAPiJobSt
+
+
         public IDbSet<GruSysStandort> GruSysStandorts { get; set; } // GruSysStandort
 
 
@@ -221,6 +227,10 @@ namespace Data
 
             modelBuilder.Configurations.Add(new GruSprachenConfiguration());
 
+            modelBuilder.Configurations.Add(new GruSysAPiJoblConfiguration());
+
+            modelBuilder.Configurations.Add(new GruSysAPiJobStConfiguration());
+
             modelBuilder.Configurations.Add(new GruSysStandortConfiguration());
 
             modelBuilder.Configurations.Add(new GruWerkzDruKontrEConfiguration());
@@ -294,6 +304,10 @@ namespace Data
             modelBuilder.Configurations.Add(new GruProgParameterConfiguration(schema));
 
             modelBuilder.Configurations.Add(new GruSprachenConfiguration(schema));
+
+            modelBuilder.Configurations.Add(new GruSysAPiJoblConfiguration(schema));
+
+            modelBuilder.Configurations.Add(new GruSysAPiJobStConfiguration(schema));
 
             modelBuilder.Configurations.Add(new GruSysStandortConfiguration(schema));
 
