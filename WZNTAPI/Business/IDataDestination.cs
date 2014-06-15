@@ -8,8 +8,9 @@ using System.Data.Common;
 
 namespace Business
 {
-    public interface IDataSourceOrigin
+    public interface IDataDestination
     {
-        DataTable Read(DataTableMapping dataTableMapping);
+        DataTable Read();
+        bool Write(DataTable data);
     }
 }

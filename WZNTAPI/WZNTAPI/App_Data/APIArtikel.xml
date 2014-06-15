@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<API>
+  <Artikel>
+    <query>
+      select distinct a.Artikelnummer, a.Matchcode, a.Artikelgruppe, a.Hauptartikelgruppe, a.Vaterartikelgruppe, a.Aktiv
+      , a.USER_Reklamation1, a.USER_Reklamation2, a.USER_Reklamation3
+      , b.FormatBreite, b.FormatVorschub, b.DurchmesserJaNein, b.FormatME
+      from dbo.KHKArtikel a
+      inner join dbo.WTXArtikelDruckDaten b on b.Artikelnummer = a.Artikelnummer and b.Mandant = a.Mandant
+      inner join [dbo].[WTXArtikelDruckDatenVarianten] c on c.Artikelnummer = b.Artikelnummer and c.Mandant = b.Mandant
+      left join KHKVariantenAuspraegungen d on d.AuspraegungID = c.AuspraegungID and d.Mandant = c.Mandant
+      left join KHKVarianten e on e.Variante = a.Variante and e.Mandant = d.Mandant
+    </query>
+    <mappings>
+      <mapping>
+        <origin>Artikelnummer</origin>
+        <destination>Artikelnummer</destination>
+      </mapping>
+      <mapping>
+        <origin>Matchcode</origin>
+        <destination>Matchcode</destination>
+      </mapping>
+      <mapping>
+        <origin>Artikelgruppe</origin>
+        <destination>Artikelgruppe</destination>
+      </mapping>
+      <mapping>
+        <origin>Hauptartikelgruppe</origin>
+        <destination>HArtikelgruppe</destination>
+      </mapping>
+      <mapping>
+        <origin>Vaterartikelgruppe</origin>
+        <destination>VArtikelgruppe</destination>
+      </mapping>
+      <mapping>
+        <origin>Aktiv</origin>
+        <destination>ArtikelKZ</destination>
+      </mapping>
+      <mapping>
+        <origin>USER_Reklamation1</origin>
+        <destination>UserRek1</destination>
+      </mapping>
+      <mapping>
+        <origin>USER_Reklamation2</origin>
+        <destination>UserRek2</destination>
+      </mapping>
+      <mapping>
+        <origin>USER_Reklamation3</origin>
+        <destination>UserRek3</destination>
+      </mapping>
+      <mapping>
+        <origin>FormatBreite</origin>
+        <destination>FormatBreite</destination>
+      </mapping>
+      <mapping>
+        <origin>FormatVorschub</origin>
+        <destination>FormatVorschub</destination>
+      </mapping>
+      <mapping>
+        <origin>DurchmesserJaNein</origin>
+        <destination>DurchmKZ</destination>
+      </mapping>
+      <mapping>
+        <origin>FormatME</origin>
+        <destination>FormatMe</destination>
+      </mapping>
+    </mappings>
+  </Artikel>
+</API>

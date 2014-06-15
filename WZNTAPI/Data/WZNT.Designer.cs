@@ -75,6 +75,54 @@ namespace Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<GruSysAPiJobl> GruSysAPiJobl
+        {
+            get
+            {
+                if ((_GruSysAPiJobl == null))
+                {
+                    _GruSysAPiJobl = base.CreateObjectSet<GruSysAPiJobl>("GruSysAPiJobl");
+                }
+                return _GruSysAPiJobl;
+            }
+        }
+        private ObjectSet<GruSysAPiJobl> _GruSysAPiJobl;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<GruSysAPiJobSt> GruSysAPiJobSt
+        {
+            get
+            {
+                if ((_GruSysAPiJobSt == null))
+                {
+                    _GruSysAPiJobSt = base.CreateObjectSet<GruSysAPiJobSt>("GruSysAPiJobSt");
+                }
+                return _GruSysAPiJobSt;
+            }
+        }
+        private ObjectSet<GruSysAPiJobSt> _GruSysAPiJobSt;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<GruSysStandort> GruSysStandort
+        {
+            get
+            {
+                if ((_GruSysStandort == null))
+                {
+                    _GruSysStandort = base.CreateObjectSet<GruSysStandort>("GruSysStandort");
+                }
+                return _GruSysStandort;
+            }
+        }
+        private ObjectSet<GruSysStandort> _GruSysStandort;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<WZNTArtikel> WZNTArtikel
         {
             get
@@ -125,6 +173,30 @@ namespace Data
         #region AddTo Methods
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the GruSysAPiJobl EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGruSysAPiJobl(GruSysAPiJobl gruSysAPiJobl)
+        {
+            base.AddObject("GruSysAPiJobl", gruSysAPiJobl);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the GruSysAPiJobSt EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGruSysAPiJobSt(GruSysAPiJobSt gruSysAPiJobSt)
+        {
+            base.AddObject("GruSysAPiJobSt", gruSysAPiJobSt);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the GruSysStandort EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToGruSysStandort(GruSysStandort gruSysStandort)
+        {
+            base.AddObject("GruSysStandort", gruSysStandort);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the WZNTArtikel EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToWZNTArtikel(WZNTArtikel wZNTArtikel)
@@ -155,6 +227,540 @@ namespace Data
     #endregion
 
     #region Entities
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WZNTModel", Name="GruSysAPiJobl")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class GruSysAPiJobl : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new GruSysAPiJobl object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="jOB_ID">Initial value of the JOB_ID property.</param>
+        public static GruSysAPiJobl CreateGruSysAPiJobl(global::System.Int32 id, global::System.Int32 jOB_ID)
+        {
+            GruSysAPiJobl gruSysAPiJobl = new GruSysAPiJobl();
+            gruSysAPiJobl.ID = id;
+            gruSysAPiJobl.JOB_ID = jOB_ID;
+            return gruSysAPiJobl;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value, "ID");
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 JOB_ID
+        {
+            get
+            {
+                return _JOB_ID;
+            }
+            set
+            {
+                OnJOB_IDChanging(value);
+                ReportPropertyChanging("JOB_ID");
+                _JOB_ID = StructuralObject.SetValidValue(value, "JOB_ID");
+                ReportPropertyChanged("JOB_ID");
+                OnJOB_IDChanged();
+            }
+        }
+        private global::System.Int32 _JOB_ID;
+        partial void OnJOB_IDChanging(global::System.Int32 value);
+        partial void OnJOB_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String JOB_Bez
+        {
+            get
+            {
+                return _JOB_Bez;
+            }
+            set
+            {
+                OnJOB_BezChanging(value);
+                ReportPropertyChanging("JOB_Bez");
+                _JOB_Bez = StructuralObject.SetValidValue(value, true, "JOB_Bez");
+                ReportPropertyChanged("JOB_Bez");
+                OnJOB_BezChanged();
+            }
+        }
+        private global::System.String _JOB_Bez;
+        partial void OnJOB_BezChanging(global::System.String value);
+        partial void OnJOB_BezChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Parameterdatei
+        {
+            get
+            {
+                return _Parameterdatei;
+            }
+            set
+            {
+                OnParameterdateiChanging(value);
+                ReportPropertyChanging("Parameterdatei");
+                _Parameterdatei = StructuralObject.SetValidValue(value, true, "Parameterdatei");
+                ReportPropertyChanged("Parameterdatei");
+                OnParameterdateiChanged();
+            }
+        }
+        private global::System.String _Parameterdatei;
+        partial void OnParameterdateiChanging(global::System.String value);
+        partial void OnParameterdateiChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> AktivKZ
+        {
+            get
+            {
+                return _AktivKZ;
+            }
+            set
+            {
+                OnAktivKZChanging(value);
+                ReportPropertyChanging("AktivKZ");
+                _AktivKZ = StructuralObject.SetValidValue(value, "AktivKZ");
+                ReportPropertyChanged("AktivKZ");
+                OnAktivKZChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _AktivKZ;
+        partial void OnAktivKZChanging(Nullable<global::System.Boolean> value);
+        partial void OnAktivKZChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String StandortKz
+        {
+            get
+            {
+                return _StandortKz;
+            }
+            set
+            {
+                OnStandortKzChanging(value);
+                ReportPropertyChanging("StandortKz");
+                _StandortKz = StructuralObject.SetValidValue(value, true, "StandortKz");
+                ReportPropertyChanged("StandortKz");
+                OnStandortKzChanged();
+            }
+        }
+        private global::System.String _StandortKz;
+        partial void OnStandortKzChanging(global::System.String value);
+        partial void OnStandortKzChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> O_TimeStamp
+        {
+            get
+            {
+                return _O_TimeStamp;
+            }
+            set
+            {
+                OnO_TimeStampChanging(value);
+                ReportPropertyChanging("O_TimeStamp");
+                _O_TimeStamp = StructuralObject.SetValidValue(value, "O_TimeStamp");
+                ReportPropertyChanged("O_TimeStamp");
+                OnO_TimeStampChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _O_TimeStamp;
+        partial void OnO_TimeStampChanging(Nullable<global::System.DateTime> value);
+        partial void OnO_TimeStampChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WZNTModel", Name="GruSysAPiJobSt")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class GruSysAPiJobSt : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new GruSysAPiJobSt object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="jOB_ID">Initial value of the JOB_ID property.</param>
+        public static GruSysAPiJobSt CreateGruSysAPiJobSt(global::System.Int32 id, global::System.Int32 jOB_ID)
+        {
+            GruSysAPiJobSt gruSysAPiJobSt = new GruSysAPiJobSt();
+            gruSysAPiJobSt.ID = id;
+            gruSysAPiJobSt.JOB_ID = jOB_ID;
+            return gruSysAPiJobSt;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value, "ID");
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 JOB_ID
+        {
+            get
+            {
+                return _JOB_ID;
+            }
+            set
+            {
+                OnJOB_IDChanging(value);
+                ReportPropertyChanging("JOB_ID");
+                _JOB_ID = StructuralObject.SetValidValue(value, "JOB_ID");
+                ReportPropertyChanged("JOB_ID");
+                OnJOB_IDChanged();
+            }
+        }
+        private global::System.Int32 _JOB_ID;
+        partial void OnJOB_IDChanging(global::System.Int32 value);
+        partial void OnJOB_IDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Frequenz
+        {
+            get
+            {
+                return _Frequenz;
+            }
+            set
+            {
+                OnFrequenzChanging(value);
+                ReportPropertyChanging("Frequenz");
+                _Frequenz = StructuralObject.SetValidValue(value, true, "Frequenz");
+                ReportPropertyChanged("Frequenz");
+                OnFrequenzChanged();
+            }
+        }
+        private global::System.String _Frequenz;
+        partial void OnFrequenzChanging(global::System.String value);
+        partial void OnFrequenzChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Startdatum
+        {
+            get
+            {
+                return _Startdatum;
+            }
+            set
+            {
+                OnStartdatumChanging(value);
+                ReportPropertyChanging("Startdatum");
+                _Startdatum = StructuralObject.SetValidValue(value, "Startdatum");
+                ReportPropertyChanged("Startdatum");
+                OnStartdatumChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Startdatum;
+        partial void OnStartdatumChanging(Nullable<global::System.DateTime> value);
+        partial void OnStartdatumChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> Startzeit
+        {
+            get
+            {
+                return _Startzeit;
+            }
+            set
+            {
+                OnStartzeitChanging(value);
+                ReportPropertyChanging("Startzeit");
+                _Startzeit = StructuralObject.SetValidValue(value, "Startzeit");
+                ReportPropertyChanged("Startzeit");
+                OnStartzeitChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _Startzeit;
+        partial void OnStartzeitChanging(Nullable<global::System.DateTime> value);
+        partial void OnStartzeitChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> AktivKz
+        {
+            get
+            {
+                return _AktivKz;
+            }
+            set
+            {
+                OnAktivKzChanging(value);
+                ReportPropertyChanging("AktivKz");
+                _AktivKz = StructuralObject.SetValidValue(value, "AktivKz");
+                ReportPropertyChanged("AktivKz");
+                OnAktivKzChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _AktivKz;
+        partial void OnAktivKzChanging(Nullable<global::System.Boolean> value);
+        partial void OnAktivKzChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> O_TimeStamp
+        {
+            get
+            {
+                return _O_TimeStamp;
+            }
+            set
+            {
+                OnO_TimeStampChanging(value);
+                ReportPropertyChanging("O_TimeStamp");
+                _O_TimeStamp = StructuralObject.SetValidValue(value, "O_TimeStamp");
+                ReportPropertyChanged("O_TimeStamp");
+                OnO_TimeStampChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _O_TimeStamp;
+        partial void OnO_TimeStampChanging(Nullable<global::System.DateTime> value);
+        partial void OnO_TimeStampChanged();
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WZNTModel", Name="GruSysStandort")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class GruSysStandort : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new GruSysStandort object.
+        /// </summary>
+        /// <param name="id">Initial value of the ID property.</param>
+        /// <param name="standortID">Initial value of the StandortID property.</param>
+        public static GruSysStandort CreateGruSysStandort(global::System.Int32 id, global::System.String standortID)
+        {
+            GruSysStandort gruSysStandort = new GruSysStandort();
+            gruSysStandort.ID = id;
+            gruSysStandort.StandortID = standortID;
+            return gruSysStandort;
+        }
+
+        #endregion
+
+        #region Simple Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                if (_ID != value)
+                {
+                    OnIDChanging(value);
+                    ReportPropertyChanging("ID");
+                    _ID = StructuralObject.SetValidValue(value, "ID");
+                    ReportPropertyChanged("ID");
+                    OnIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _ID;
+        partial void OnIDChanging(global::System.Int32 value);
+        partial void OnIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String StandortID
+        {
+            get
+            {
+                return _StandortID;
+            }
+            set
+            {
+                OnStandortIDChanging(value);
+                ReportPropertyChanging("StandortID");
+                _StandortID = StructuralObject.SetValidValue(value, false, "StandortID");
+                ReportPropertyChanged("StandortID");
+                OnStandortIDChanged();
+            }
+        }
+        private global::System.String _StandortID;
+        partial void OnStandortIDChanging(global::System.String value);
+        partial void OnStandortIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Standort
+        {
+            get
+            {
+                return _Standort;
+            }
+            set
+            {
+                OnStandortChanging(value);
+                ReportPropertyChanging("Standort");
+                _Standort = StructuralObject.SetValidValue(value, true, "Standort");
+                ReportPropertyChanged("Standort");
+                OnStandortChanged();
+            }
+        }
+        private global::System.String _Standort;
+        partial void OnStandortChanging(global::System.String value);
+        partial void OnStandortChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> O_TimeStamp
+        {
+            get
+            {
+                return _O_TimeStamp;
+            }
+            set
+            {
+                OnO_TimeStampChanging(value);
+                ReportPropertyChanging("O_TimeStamp");
+                _O_TimeStamp = StructuralObject.SetValidValue(value, "O_TimeStamp");
+                ReportPropertyChanged("O_TimeStamp");
+                OnO_TimeStampChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _O_TimeStamp;
+        partial void OnO_TimeStampChanging(Nullable<global::System.DateTime> value);
+        partial void OnO_TimeStampChanged();
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No Metadata Documentation available.
